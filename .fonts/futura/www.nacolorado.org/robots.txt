@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: /cgi-bin/
+Disallow: /.scripts/
+Disallow: /tsblogs/
+Disallow: /images/
+Disallow: /contact/e_mail_sent.php
+Disallow: /events/event_submission.php
+Disallow: /events/event_update.php
+Disallow: /events/Calendar_class.php
+Disallow: /events/.process_event.inc.php
+Disallow: /events/.s/
+Disallow: 404.php
+Disallow: /crcna/shop/
+Disallow: /crcna/supportfiles/
+Disallow: /crcna/lists/

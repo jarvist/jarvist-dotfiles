@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/jarvist/Ubuntu One/migovecsurveydata/garden/garden-low'
+let g:netrw_dirhist_2='/etc/resolvconf'
+let g:netrw_dirhist_3='/etc/resolvconf/update.d'
+let g:netrw_dirhist_4='/home/jarvist/Desktop/2011 - Izgubljeni Raj/2011 Photos/Grega/half_size'

@@ -1,0 +1,13 @@
+# This is an example for IceWM's toolbar definition file.
+#
+# Place your variants in /etc/X11/icewm or in $HOME/.icewm
+# since modifications to this file will be discarded when you
+# (re)install icewm.
+#
+prog MRXVT xterm mrxvt -xft -xftfn Inconsolata -fg white -bg black -bt -g 179x65 -xft -xftsz 14 
+#x-terminal-emulator
+#prog FTE fte fte
+#prog Netscape netscape netscape
+prog    "gvim" vim /usr/bin/gvim -f
+prog    "Thunar" gnome-folder thunar
+prog "google-chrome" /usr/share/icons/hicolor/16x16/apps/google-chrome.png google-chrome

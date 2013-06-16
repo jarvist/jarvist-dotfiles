@@ -84,6 +84,7 @@ alias l='ls -CF'
 
 # Alias definitions.
 alias hpc='ssh hpc ' #Home sweet home
+alias redshiftnow='redshift -l 51:0 -o '
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

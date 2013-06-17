@@ -100,4 +100,8 @@ fi
 #Kick vim to give full colour, please
 export TERM=xterm-256color
 
+if [ -n "$DISPLAY" ]; then
+    xset b off
+fi
+
 echo -e "\e[1;36m     GREETINGS PROFESSOR FALKEN. SHALL WE PLAY A GAME?\e[m"

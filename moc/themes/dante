@@ -8,6 +8,7 @@
 # ugly unless you have cyan set to a 
 # *dark color* ...
 
+
 background				= default	default
 frame					= cyan		default
 

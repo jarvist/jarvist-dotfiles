@@ -9,7 +9,7 @@
 # You'll have to omit XK_ prefixs and to replace XF86XK_ prefixes by
 # XF86. Valid modifiers are Alt, Ctrl, Shift, Meta, Super and Hyper.
 #
-key "Alt+Ctrl+t"	mrxvt -fg white -bg black -bt -g 179x65 	
+key "Alt+Ctrl+t"	mrxvt -fn terminus-16 -fb terminus-bold-16 -fg green -bg black -bt -g 310x85 -sl 65535
 key "Alt+Ctrl+f"		fte
 key "Alt+Ctrl+e"		nedit
 key "Alt+Ctrl+g"		gimp

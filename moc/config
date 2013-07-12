@@ -438,7 +438,7 @@ CanStartInPlaylist	= yes
 # Example:
 #
 #OnSongChange = "/home/jack/.moc/myscript %a %r"
-OnSongChange = "/usr/lib/lastfmsubmitd/lastfmsubmit --artist %a --title %t --length %d --album %b"
+#OnSongChange = "/usr/lib/lastfmsubmitd/lastfmsubmit --artist %a --title %t --length %d --album %b"
 
 # OnStop.
 # Run the following command (full path, no arguments) when MOC changes state

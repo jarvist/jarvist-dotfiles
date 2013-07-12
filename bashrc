@@ -86,6 +86,12 @@ alias l='ls -CF'
 alias hpc='ssh hpc ' #Home sweet home
 alias redshiftnow='redshift -l 51:0 -o '
 
+# set PATH so it includes user's private bin if it exists
+if [ -d ~/bin ] ; then
+ PATH=~/bin:"${PATH}"
+fi
+export PATH
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).

@@ -5,9 +5,10 @@
 # (re)install icewm.
 #
 prog MRXVT xterm mrxvt -xft -xftfn Inconsolata -fg white -bg black -bt -g 179x65 -xft -xftsz 14 
+prog MRXVT-Terminus mrxvt mrxvt -fn terminus-16 -fb terminus-bold-16 -fg green -bg black -bt -g 310x85 -sl 65535
 #x-terminal-emulator
 #prog FTE fte fte
 #prog Netscape netscape netscape
 prog    "gvim" vim /usr/bin/gvim -f
-prog    "Thunar" gnome-folder thunar
+prog    "Thunar" thunar thunar
 prog "google-chrome" /usr/share/icons/hicolor/16x16/apps/google-chrome.png google-chrome

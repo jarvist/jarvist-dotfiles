@@ -87,6 +87,12 @@ alias hpc='ssh hpc ' #Home sweet home
 alias redshiftnow='redshift -l 51:0 -o ' #Hardcoded to London; this is where it's at.
 alias blueshift='redshift -O 5600' #I'm good with daylight
 
+# set PATH so it includes user's private bin if it exists
+if [ -d ~/bin ] ; then
+ PATH=~/bin:"${PATH}"
+fi
+export PATH
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).

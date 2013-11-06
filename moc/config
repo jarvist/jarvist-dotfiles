@@ -62,11 +62,11 @@ Prebuffering		= 64
 # You can enter more than one driver separated by a comma. The first working
 # driver will be used.
 #SoundDriver		= ALSA, OSS
-#SoundDriver		= JACK, ALSA, OSS
+SoundDriver		= JACK
 
 # Jack output settings.
-JackOutLeft		= "alsa_pcm:playback_1"
-JackOutRight		= "alsa_pcm:playback_2"
+#JackOutLeft		= "alsa_pcm:playback_1"
+#JackOutRight		= "alsa_pcm:playback_2"
 
 # OSS output device.
 OSSDevice		= /dev/dsp

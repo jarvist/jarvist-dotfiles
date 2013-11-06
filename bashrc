@@ -105,4 +105,4 @@ if [ -n "$DISPLAY" ]; then
     xset b off
 fi
 
-echo -e "\e[1;36m     GREETINGS PROFESSOR FALKEN. SHALL WE PLAY A GAME?\e[m"
+echo -e "     GREETINGS PROFESSOR FALKEN.  SHALL WE PLAY A GAME?"

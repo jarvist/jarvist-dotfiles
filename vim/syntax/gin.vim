@@ -14,7 +14,7 @@ syn case ignore
 
 syn keyword NWBlockCmd cell fractional space species buck end
 syn keyword NWTask maxcyc stepmx dump every
-syn keyword NWStartup single prop conp comp phon pot
+syn keyword NWStartup single prop property conp comp phon phonon pot potential
 syn keyword GULPType core shel shell
 
 syn region  shDoubleQuote   start=+"+ skip=+\\"+ end=+"+
@@ -36,6 +36,10 @@ syn keyword     shTodo          contained                       COMBAK FIXME TOD
 syn match       shComment                       "^\s*\zs#.*$"   contains=@shCommentGroup
 syn match       shComment                       "\s\zs#.*$"     contains=@shCommentGroup
 syn match       shQuickComment  contained       "#.*$"
+
+syn match       shComment                       "^\s*\zs\*.*$"   contains=@shCommentGroup
+syn match       shComment                       "\s\zs\*.*$"     contains=@shCommentGroup
+syn match shQuickComment contained "\*.*$"
 
 "Let there be colour
 let b:current_syntax = "nw"

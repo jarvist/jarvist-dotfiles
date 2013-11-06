@@ -12,15 +12,19 @@ syn case ignore
 
 " Keywords
 
-syn keyword NWBlockCmd dft tddft geometry end basis
-syn keyword NWTask task
-syn keyword NWStartup start restart scratch_dir permanent_dir memory echo
+syn keyword NWBlockCmd cell fractional space species buck end
+syn keyword NWTask maxcyc stepmx dump every
+syn keyword NWStartup single prop conp comp phon pot
+syn keyword GULPType core shel
 
 syn region  shDoubleQuote   start=+"+ skip=+\\"+ end=+"+
 
 syn match       shNumber            "-\=\<\d\+\>#\="
 
 syn match NWAtom    " \a "
+syn match NWAtom    " \a\a "
+syn match NWAtom    "^\a\a "
+syn match NWAtom    "^\a "
 
 syn match   NWOperator           "[*/+-><^!~%^&|=.:;,$?]"
 
@@ -45,4 +49,5 @@ hi def link shNumber    Number
 hi def link NWAtom      PreProc
 hi def link NWStartup   Special
 hi def link NWOperator  Operator
+hi def link GULPType    PreProc 
 "hi def link NWDefine    Define

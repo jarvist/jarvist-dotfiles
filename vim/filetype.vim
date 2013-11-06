@@ -4,13 +4,9 @@ endif
 let did_load_myfiletypes= 1
 
 augroup filetypedetect
- au BufNewFile,BufReadPost *.pdb         setf pdb
+ au! BufNewFile,BufReadPost *.pdb         setf pdb
+ au! BufNewFile,BufReadPost *.nw     setf nw
+ au! BufNewFile,BufReadPost *.com            setf com
+ au BufNewFile,BufReadPost *.gin         set ft=gin
 augroup END
 
-augroup filetypedetect
- au BufNewFile,BufReadPost *.nw     setf nw
-augroup END
-
-augroup filetypedetect
- au BufNewFile,BufReadPost *.com            setf com
-augroup END

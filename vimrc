@@ -66,3 +66,5 @@ else
     let g:zenburn_high_Contrast=1
     colors zenburn
 endif
+
+ au BufNewFile,BufReadPost *.gin         set ft=gin  "Shouldn't need this, but getting overridden

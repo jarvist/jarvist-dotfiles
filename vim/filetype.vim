@@ -7,6 +7,6 @@ augroup filetypedetect
  au! BufNewFile,BufReadPost *.pdb         setf pdb
  au! BufNewFile,BufReadPost *.nw     setf nw
  au! BufNewFile,BufReadPost *.com            setf com
- au BufNewFile,BufReadPost *.gin         set ft=gin
+ au BufNewFile,BufReadPost *.gin *.gout         set ft=gin
 augroup END
 

@@ -67,4 +67,4 @@ else
     colors zenburn
 endif
 
- au BufNewFile,BufReadPost *.gin         set ft=gin  "Shouldn't need this, but getting overridden
+ au BufNewFile,BufReadPost *.gin,*.gout        set ft=gin  "Shouldn't need this, but getting overridden

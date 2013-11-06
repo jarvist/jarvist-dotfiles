@@ -15,16 +15,16 @@ syn case ignore
 syn keyword NWBlockCmd cell fractional space species buck end
 syn keyword NWTask maxcyc stepmx dump every
 syn keyword NWStartup single prop conp comp phon pot
-syn keyword GULPType core shel
+syn keyword GULPType core shel shell
 
 syn region  shDoubleQuote   start=+"+ skip=+\\"+ end=+"+
 
 syn match       shNumber            "-\=\<\d\+\>#\="
 
-syn match NWAtom    " \a "
-syn match NWAtom    " \a\a "
-syn match NWAtom    "^\a\a "
-syn match NWAtom    "^\a "
+syn match NWAtom    " \u "
+syn match NWAtom    " \u\a "
+syn match NWAtom    "^\u\a "
+syn match NWAtom    "^\u "
 
 syn match   NWOperator           "[*/+-><^!~%^&|=.:;,$?]"
 

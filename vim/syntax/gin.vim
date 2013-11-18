@@ -26,7 +26,7 @@ syn match NWAtom    " \u\a "
 syn match NWAtom    "^\u\a "
 syn match NWAtom    "^\u "
 
-syn match   NWOperator           "[*/+-><^!~%^&|=.:;,$?]"
+syn match   NWOperator           "[*/+-><^~%^&|=.:;,$?]"
 
 
 " Comments: {{{1
@@ -36,6 +36,10 @@ syn keyword     shTodo          contained                       COMBAK FIXME TOD
 syn match       shComment                       "^\s*\zs#.*$"   contains=@shCommentGroup
 syn match       shComment                       "\s\zs#.*$"     contains=@shCommentGroup
 syn match       shQuickComment  contained       "#.*$"
+
+syn match       shComment                       "^\s*\zs!.*$"   contains=@shCommentGroup
+syn match       shComment                       "\s\zs!.*$"     contains=@shCommentGroup
+syn match       shQuickComment  contained       "!.*$"
 
 syn match       shComment                       "^\s*\zs\*.*$"   contains=@shCommentGroup
 syn match       shComment                       "\s\zs\*.*$"     contains=@shCommentGroup

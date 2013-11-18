@@ -1,12 +1,10 @@
 filetype off
-call pathogen#runtime_append_all_bundles()
+call pathogen#incubate()
 filetype plugin indent on
 
 set gfn=Inconsolata\ Medium\ 16
 set noeb
 set vb
-
-call pathogen#infect()
 
 set nocompatible
 syntax on

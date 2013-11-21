@@ -1,12 +1,10 @@
 filetype off
-call pathogen#runtime_append_all_bundles()
+call pathogen#incubate()
 filetype plugin indent on
 
 set gfn=Inconsolata\ Medium\ 16
 set noeb
 set vb
-
-call pathogen#infect()
 
 set nocompatible
 syntax on
@@ -66,3 +64,5 @@ else
     let g:zenburn_high_Contrast=1
     colors zenburn
 endif
+
+ au BufNewFile,BufReadPost *.gin,*.gout,*.got        set ft=gin  "Shouldn't need this, but getting overridden

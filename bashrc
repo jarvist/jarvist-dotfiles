@@ -59,7 +59,8 @@ unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+#    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+PS1="${TITLEBAR}${bold}[\t]\u@\h:\w/ \n> ${normal}"
     ;;
 *)
     ;;
@@ -68,7 +69,7 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    alias ls='ls -Gp '
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -82,6 +83,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias ls='ls -Gp'
+
 # Alias definitions.
 alias hpc='ssh hpc ' #Home sweet home
 alias redshiftnow='redshift -l 51:0 -o ' #Hardcoded to London; this is where it's at.
@@ -92,6 +95,9 @@ if [ -d ~/bin ] ; then
  PATH=~/bin:"${PATH}"
 fi
 export PATH
+
+PYTHONPATH=/Users/jarvist/REPOSITORY/phonopy/lib/python:/usr/local/lib/python2.7/site-packages
+export PYTHONPATH
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -106,4 +112,4 @@ if [ -n "$DISPLAY" ]; then
     xset b off
 fi
 
-echo -e "\e[1;36m     GREETINGS PROFESSOR FALKEN. SHALL WE PLAY A GAME?\e[m"
+echo -e "     GREETINGS PROFESSOR FALKEN.  SHALL WE PLAY A GAME?"

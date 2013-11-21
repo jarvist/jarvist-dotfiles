@@ -83,7 +83,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias ls='ls -Gp'
+alias ls='ls --color'
 
 # Alias definitions.
 alias hpc='ssh hpc ' #Home sweet home

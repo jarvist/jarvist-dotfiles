@@ -49,12 +49,19 @@ set textwidth=79
 set formatoptions=qrn1
 "set colorcolumn=85
 
+"keeps location in long broken lines
 nnoremap j gj
 nnoremap k gk
+
+"Apparently this will make my life better:
+"https://news.ycombinator.com/item?id=5571022
+set autochdir
 
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
+
+
 
 if has('gui_running')
     set background=dark

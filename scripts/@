@@ -5,5 +5,7 @@
 # Same idea as my old script 'freck'; but now piping to vim wiki.
 # NB: prob an exceptionally bad idea if already open in vim
 
-echo [` date  +%H:%M`]:`pwd`: $* "redirect to"  ~/vimwiki/diary/`date +%Y-%m-%d.wiki`
+#Note: my vimwiki is a symlink to a version hosted in my backup directory, and is itself a bitbucket private git repo
+
+echo [` date  +%H:%M`]:`pwd`: $* >>  ~/vimwiki/diary/`date +%Y-%m-%d.wiki`
 # Files look like 2012-04-25.wiki

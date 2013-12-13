@@ -1,3 +1,47 @@
 Host hpc
     HostName login.cx1.hpc.ic.ac.uk
     User jmf02
+
+#Bath general access;
+#https://wiki.bath.ac.uk/display/HPC/Logging+in+from+outside
+
+# Global settings
+Host *
+    Protocol 2
+    Compression yes
+    ServerAliveCountMax 5
+    ServerAliveInterval 30
+ 
+# These apply to any Bath host
+Host *.bath.ac.uk
+    User jmf45
+    PreferredAuthentications publickey
+#    IdentityFile /home/jarvist/.ssh/bath_rsa
+ 
+# These settings are specific to LCPU
+Host lcpu
+    User jmf45
+    HostName lcpu.bath.ac.uk
+#    PreferredAuthentications publickey
+#    IdentityFile /home/jarvist/.ssh/bath_rsa
+ 
+# These are specific to Aquila.  Note the use of ProxyCommand.
+Host aquila
+    User jmf45
+    HostName aquila.bath.ac.uk
+    PreferredAuthentications publickey
+#    IdentityFile /home/jarvist/.ssh/bath_rsa
+#    ProxyCommand ssh lcpu nc %h %p
+
+Host hector
+    User jarvist
+    HostName login.hector.ac.uk
+
+Host archer
+    User jarvist
+    HostName login.archer.ac.uk
+
+Host neon chsv-wmd
+    User jarvist
+    HostName chsv-wmd.bath.ac.uk 
+

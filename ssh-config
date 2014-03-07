@@ -2,6 +2,13 @@ Host hpc
     HostName login.cx1.hpc.ic.ac.uk
     User jmf02
 
+Host union
+    HostName union.ic.ac.uk
+    User jmf02
+    ForwardAgent yes 
+
+#access to github via local machine keys
+
 #Bath general access;
 #https://wiki.bath.ac.uk/display/HPC/Logging+in+from+outside
 
@@ -39,6 +46,10 @@ Host hector
 
 Host archer
     User jarvist
+    HostName login.archer.ac.uk
+
+Host ultrafox fox ultra
+    User pr1ujarv
     HostName login.archer.ac.uk
 
 Host neon chsv-wmd

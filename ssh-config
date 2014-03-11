@@ -1,9 +1,12 @@
 # Global settings
 Host *
-    Protocol 2 # Protocol 1 well dodgy
+    Protocol 2 
+# Protocol 1 well dodgy
     Compression yes
-    ServerAliveCountMax 5  # Up to 5 pings with no reply before hang up
-    ServerAliveInterval 30 # Seconds. Needs to be <60s for some home routers
+    ServerAliveCountMax 5  
+# Up to 5 pings with no reply before hang up
+    ServerAliveInterval 30 
+# Seconds. Needs to be <60s for some home routers
 
 # Enable Master Sessions - (for scp autocomplete + not hammering HPC facilities)
 # See: http://unix.stackexchange.com/questions/32984/multiple-ssh-sessions-in-single-command/33012#33012

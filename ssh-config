@@ -50,6 +50,31 @@ Host aquila
 #    IdentityFile /home/jarvist/.ssh/bath_rsa
 #    ProxyCommand ssh lcpu nc %h %p
 
+Host aquila-tunnel
+    User jmf45
+    HostName aquila.bath.ac.uk
+    PreferredAuthentications publickey
+    ProxyCommand ssh lcpu nc %h %p
+
+Host neon chsv-wmd
+    User jarvist
+    HostName chsv-wmd.bath.ac.uk 
+
+Host neon-tunnel
+    User jarvist
+    HostName chsv-wmd.bath.ac.uk 
+    ProxyCommand ssh lcpu nc %h %p
+
+# Group machines for general account abuse.
+Host chlorine tesla # Linux?
+    User compchem
+    Hostname chmc-chlorine.bath.ac.uk
+
+Host aluminium slave # Headless (?) i7 iMac
+    User compchem
+    Hostname chpc-aw10.bath.ac.uk
+
+# National facilities
 Host hector
     User jarvist
     HostName login.hector.ac.uk
@@ -62,15 +87,4 @@ Host ultrafox fox ultra
     User pr1ujarv
     HostName login.archer.ac.uk
 
-Host neon chsv-wmd
-    User jarvist
-    HostName chsv-wmd.bath.ac.uk 
 
-# Group machines for general account abuse.
-Host chlorine tesla # Linux?
-    User compchem
-    Hostname chmc-chlorine.bath.ac.uk
-
-Host aluminium slave # Headless (?) i7 iMac
-    User compchem
-    Hostname chpc-aw10.bath.ac.uk

@@ -66,9 +66,14 @@ Host neon-tunnel
     ProxyCommand ssh lcpu nc %h %p
 
 # Group machines for general account abuse.
-Host chlorine tesla # Linux?
-    User compchem
+Host chlorine tesla # Linux - :)
+    User jarvist
     Hostname chmc-chlorine.bath.ac.uk
+
+Host chlorine-tunnel tesla-tunnel # Linux?
+    User jarvist
+    Hostname chmc-chlorine.bath.ac.uk
+    ProxyCommand ssh lcpu nc %h %p
 
 Host aluminium slave # Headless (?) i7 iMac
     User compchem

@@ -78,6 +78,10 @@ nnoremap k gk
 "https://news.ycombinator.com/item?id=5571022
 set autochdir
 
+"Jump to old line...
+if has("autocmd")
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
 
 
 if has('gui_running')

@@ -78,6 +78,9 @@ nnoremap k gk
 "https://news.ycombinator.com/item?id=5571022
 set autochdir
 
+" Remap ; to :, so I don't have to shift...
+nnoremap ; :
+
 "Jump to old line...
 if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif

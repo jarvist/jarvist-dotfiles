@@ -78,8 +78,13 @@ nnoremap k gk
 "https://news.ycombinator.com/item?id=5571022
 set autochdir
 
+"The below are motivated by watching Damian Conway on vim:
+"https://www.youtube.com/watch?v=aHm36-na4-4
 " Remap ; to :, so I don't have to shift...
 nnoremap ; :
+
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn','\%81v',100)
 
 "Jump to old line...
 if has("autocmd")

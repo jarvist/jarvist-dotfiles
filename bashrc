@@ -90,6 +90,9 @@ alias hpc='ssh hpc ' #Home sweet home
 alias redshiftnow='redshift -l 51:0 -o ' #Hardcoded to London; this is where it's at.
 alias blueshift='redshift -O 5600' #I'm good with daylight
 
+# Oh god I'm turning into a mac head
+alias open='xdg-open'
+
 # set PATH so it includes user's private bin if it exists
 if [ -d ~/bin ] ; then
  PATH=~/bin:"${PATH}"

@@ -32,7 +32,7 @@ Host union
 # These apply to any Bath host
 Host *.bath.ac.uk
     User jmf45
-    PreferredAuthentications publickey
+#    PreferredAuthentications publickey
 #    IdentityFile /home/jarvist/.ssh/bath_rsa
  
 # These settings are specific to LCPU
@@ -78,6 +78,15 @@ Host chlorine-tunnel tesla-tunnel # Linux?
 Host aluminium slave # Headless (?) i7 iMac
     User compchem
     Hostname chpc-aw10.bath.ac.uk
+
+Host scandium wmd-pv #2x6 core Xeon, 64GB mem
+    User jarvist
+    Hostname chpc-scandium.bath.ac.uk
+
+Host scandium-tunnel wmd-pv-tunnel #2x6 core Xeon, 64GB mem
+    User jarvist
+    Hostname chpc-scandium.bath.ac.uk
+    ProxyCommand ssh lcpu nc %h %p
 
 # National facilities
 Host hector

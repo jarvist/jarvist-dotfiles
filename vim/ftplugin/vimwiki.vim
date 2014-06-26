@@ -537,3 +537,10 @@ command! -buffer VimwikiCatUrl call vimwiki#html#CatUrl(expand('%:p'))
 command! VimwikiPrintWikiState call vimwiki#base#print_wiki_state()
 command! VimwikiReadLocalOptions call vimwiki#base#read_wiki_options(1)
 " }}}
+
+" Vimiwiki auto push to git {{{
+augroup vimwiki
+au! BufRead /home/jarvist/vimwiki/index.<wbr>wiki  !git pull
+au! BufWritePost /home/jarvist/vimwiki/*  !git add <afile>;git commit -m "Auto commit + push.";git push
+augroup END</wbr>
+" }}}

@@ -8,7 +8,7 @@
 
 dir=~/filthy-dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc gitconfig vimrc vim icewm moc fonts dircolors" #zshrc oh-my-zsh private scrotwm.conf Xresources"    # list of files/folders to symlink in homedir
+files="bashrc gitconfig mrxvtrc vimrc vim icewm moc fonts dircolors" #zshrc oh-my-zsh private scrotwm.conf Xresources"    # list of files/folders to symlink in homedir
 
 ##########
 

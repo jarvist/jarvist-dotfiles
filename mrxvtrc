@@ -1,0 +1,36 @@
+mrxvt*internalBorder:        0
+mrxvt*loginShell:         true
+mrxvt*scrollBar:         false
+mrxvt*cursorBlink:       false
+!mrxvt*geometry:         80x26
+mrxvt*saveLines:         65535
+mrxvt*dynamicColors:        on
+mrxvt*highlightSelection: true
+
+! Appearance
+mrxvt*utf8:            2
+mrxvt*eightBitInput:   true
+mrxvt*metaSendsEscape: true
+mrxvt*cursorColor: #DCDCCC
+
+! Zenburn
+
+mrxvt*background:  #3f3f3f
+mrxvt*foreground:  #dcdccc
+mrxvt*color0:      #1E2320
+mrxvt*color1:      #705050
+mrxvt*color2:      #60b48a
+mrxvt*color3:      #dfaf8f
+mrxvt*color4:      #506070
+mrxvt*color5:      #dc8cc3
+mrxvt*color6:      #8cd0d3
+mrxvt*color7:      #dcdccc
+mrxvt*color8:      #709080
+mrxvt*color9:      #dca3a3
+mrxvt*color10:     #c3bf9f
+mrxvt*color11:     #f0dfaf
+mrxvt*color12:     #94bff3
+mrxvt*color13:     #ec93d3
+mrxvt*color14:     #93e0e3
+mrxvt*color15:     #ffffff
+

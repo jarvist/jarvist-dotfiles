@@ -115,4 +115,7 @@ Host ultrafox fox ultra
     User pr1ujarv
     HostName login.archer.ac.uk
 
-
+Host potassium
+    User jarvist
+    Hostname chmc-7602.campus.bath.ac.uk
+    ProxyCommand ssh lcpu nc %h %p

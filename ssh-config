@@ -59,6 +59,10 @@ Host aquila-tunnel
 Host neon chsv-wmd
     User jarvist
     HostName chsv-wmd.bath.ac.uk 
+    LocalForward 2000 localhost:80
+    # Localforward gives access to Ganglia web monitoring...
+#    LocalForward 2001 138.38.45.74:80 
+    #IPMI tunnel
 
 Host neon-tunnel
     User jarvist
@@ -79,6 +83,15 @@ Host aluminium slave # Headless (?) i7 iMac
     User compchem
     Hostname chpc-aw10.bath.ac.uk
 
+Host titanium #2x6 core Xeon, 64GB mem
+    User jarvist
+    Hostname chpc-titanium.bath.ac.uk
+
+Host titanium-tunnel #2x6 core Xeon, 64GB mem
+    User jarvist
+    Hostname chpc-titanium.bath.ac.uk
+    ProxyCommand ssh lcpu nc %h %p
+
 Host scandium wmd-pv #2x6 core Xeon, 64GB mem
     User jarvist
     Hostname chpc-scandium.bath.ac.uk
@@ -87,6 +100,7 @@ Host scandium-tunnel wmd-pv-tunnel #2x6 core Xeon, 64GB mem
     User jarvist
     Hostname chpc-scandium.bath.ac.uk
     ProxyCommand ssh lcpu nc %h %p
+
 
 # National facilities
 Host hector

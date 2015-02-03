@@ -56,11 +56,14 @@ else
 fi
 unset color_prompt force_color_prompt
 
+bold=`tput bold`
+normal=`tput sgr0`
+
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
 #    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-PS1="${TITLEBAR}${bold}[\t]\u@\h:\w/ \n> ${normal}"
+PS1="\[${TITLEBAR}${bold}[\t]\u@\h:\w/ \n\]\[>\] ${normal}"
     ;;
 *)
     ;;
@@ -85,7 +88,12 @@ alias l='ls -CF'
 
 alias ls='ls -Gp'
 
-alias julia="exec '/Applications/Julia-0.2.0-rc2.app/Contents/Resources/julia/bin/julia'"
+alias datestamp='rename "s/^/`date +%Y-%m-%d`-JarvistMooreFrost-/" '
+
+alias ase="source ~/Virtualenvs/python-ase-3.8.1.3440/bin/activate"
+
+# Abuse Apple's open command
+alias vesta='open -a Vesta '
 
 # Alias definitions.
 alias hpc='ssh hpc ' #Home sweet home
@@ -112,5 +120,7 @@ export TERM=xterm-256color
 if [ -n "$DISPLAY" ]; then
     xset b off
 fi
+
+shopt -s checkwinsize
 
 echo -e "     GREETINGS PROFESSOR FALKEN.  SHALL WE PLAY A GAME?"

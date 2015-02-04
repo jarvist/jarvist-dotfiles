@@ -5,10 +5,20 @@
 
 # Construct an exclude.tmp list for rsync
 cat > exclude.tmp <<EOF
+oq#cq <--- this is an Rsync comment (I know, crazy eh?)
+
+oq#cq Standard VASP big files
 WAVECAR
 CHG
 CHGCAR
+
+oq#cq Gaussian Checkpoints
 *.chk
+oq#cq Gaussian Crash outputs
+Gau-*
+
+oq#cq General unix core-dumps (crashed program memory contents)
+core.*
 EOF
 
 # Echo the contents to the user

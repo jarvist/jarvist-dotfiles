@@ -4,11 +4,13 @@
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 ############################
 
+echo "WARNING: I haven't used this in a while! Things may be missing."
+
 ########## Variables
 
 dir=~/filthy-dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc gitconfig mrxvtrc vimrc vim icewm moc fonts dircolors" #zshrc oh-my-zsh private scrotwm.conf Xresources"    # list of files/folders to symlink in homedir
+files="bashrc gitconfig mrxvtrc vimrc vim icewm moc fonts dircolors XResources" #zshrc oh-my-zsh private scrotwm.conf Xresources"    # list of files/folders to symlink in homedir
 
 ##########
 

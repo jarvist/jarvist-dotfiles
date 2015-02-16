@@ -1,13 +1,13 @@
 filetype off
 call pathogen#incubate()
-filetype plugin indent on
+filetype plugin indent on   " detect file type and load indents and plugins
+syntax on                   " turn on syntax highlighting
 
 set gfn=Inconsolata\ Medium\ 16
 set noeb
 set vb
 
 set nocompatible
-syntax on
 
 " F7 to toggle spell-checking
 map <silent> <F7> :set nospell!<CR>:set nospell?<CR>
@@ -31,10 +31,23 @@ set formatoptions=qrn1
 set number
 set relativenumber
 
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+" Tabs are evil
+set tabstop=4               " number of spaces a <Tab> in the file counts for
+set shiftwidth=4            " number of spaces for auto indent and line shift
+set softtabstop=4           " number of spaces pressing <Tab> counts for
+set expandtab               " insert tabs as spaces
+
+" Special tabs - Smaller indents on css and html files
+autocmd! Syntax css,html,htmldjango,js,markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+" When writing English docs (vs. code), autobreak lines like a proper editor
+" Automatically wrap text while typing in Markdown and rST documents
+" formatoptions+=t --> auto format
+autocmd! BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd! Filetype markdown,rst,tex,plaintex set textwidth=79 formatoptions+=t
+
+" I always write Latex, not plain TeX.
+let g:tex_flavor='latex'
 
 set encoding=utf-8
 set scrolloff=3
@@ -55,12 +68,14 @@ set undofile
 "Sorting out search...
 nnoremap / /\v
 vnoremap / /\v
-set ignorecase
-set smartcase
+set ignorecase      " ignore case when pattern matching
+set smartcase       " ... only if all characters are lower case
 set gdefault
-set incsearch
-set showmatch
-set hlsearch
+set incsearch       " highlight matches while typing search
+set showmatch       " briefly jump to matching bracket
+set hlsearch        " keep previous search hilights
+
+" I can't remember what this does... magic?
 nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
@@ -83,6 +98,7 @@ set autochdir
 " Remap ; to :, so I don't have to shift...
 nnoremap ; :
 
+" Flick of colour on Column line 81, but only 81 (to spot long lines)
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn','\%81v',100)
 
@@ -91,7 +107,7 @@ if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-
+" Set Colours determined by whether running gvim or not
 if has('gui_running')
     set background=dark
     colorscheme solarized

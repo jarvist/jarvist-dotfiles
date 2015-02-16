@@ -10,7 +10,7 @@ echo "WARNING: I haven't used this in a while! Things may be missing."
 
 dir=~/filthy-dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc gitconfig mrxvtrc vimrc vim icewm moc fonts dircolors XResources" #zshrc oh-my-zsh private scrotwm.conf Xresources"    # list of files/folders to symlink in homedir
+files="bashrc gitconfig mrxvtrc vimrc vim icewm moc fonts dircolors XResources inputrc editrc" #zshrc oh-my-zsh private scrotwm.conf Xresources"    # list of files/folders to symlink in homedir
 
 ##########
 

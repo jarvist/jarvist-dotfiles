@@ -116,3 +116,4 @@ if [ -n "$DISPLAY" ]; then
 fi
 
 echo -e "     GREETINGS PROFESSOR FALKEN.  SHALL WE PLAY A GAME?"
+tmux list-sessions 2> /dev/null # list tmux sessions, don't show anything if none...

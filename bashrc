@@ -90,6 +90,8 @@ alias hpc='ssh hpc ' #Home sweet home
 alias redshiftnow='redshift -l 51:0 -o ' #Hardcoded to London; this is where it's at.
 alias blueshift='redshift -O 5600' #I'm good with daylight
 
+alias termcolours='for x in 0 1 4 5 7 8; do for i in `seq 30 37`; do for a in `seq 40 47`; do echo -ne "\e[$x;$i;$a""m\\\e[$x;$i;$a""m\e[0;37;40m "; done; echo; done; done; echo "";'
+
 # Oh god I'm turning into a mac head
 alias open='xdg-open'
 

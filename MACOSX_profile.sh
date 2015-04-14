@@ -35,7 +35,7 @@ normal=`tput sgr0`
 case "$TERM" in
 xterm*|rxvt*)
     #PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    PS1="\[${TITLEBAR}${bold}[\t]\u@\h:\w/ \n>\] ${normal}"
+    PS1="\[${TITLEBAR}${bold}\][\t]\u@\h:\w/ \n> \[${normal}\]"
     ;;
 *)
     ;;
@@ -96,4 +96,5 @@ fi
 
 shopt -s checkwinsize
 
-echo -e "     GREETINGS PROFESSOR FALKEN.  SHALL WE PLAY A GAME?"
+echo -e "${bold}     GREETINGS PROFESSOR FALKEN.  SHALL WE PLAY A GAME?${normal}"
+tmux list-sessions 2> /dev/null # list tmux sessions, don't show anything if none...

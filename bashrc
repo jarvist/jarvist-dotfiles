@@ -119,3 +119,8 @@ fi
 
 echo -e "     GREETINGS PROFESSOR FALKEN.  SHALL WE PLAY A GAME?"
 tmux list-sessions 2> /dev/null # list tmux sessions, don't show anything if none...
+
+theend=` date --date "1 November 2016 17:00" +%s `
+now=` date  +%s `
+diff=` expr $theend - $now `
+echo "Really Unemployed in: " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.

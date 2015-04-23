@@ -1,0 +1,11 @@
+# SCF Done 
+regexp=SCF Done
+colours=magenta
+======
+# Warning!
+regexp=Warning!
+colours=red
+======
+# Cycle (part of SCF Loop)
+regexp=Cycle
+colours=yellow

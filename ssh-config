@@ -118,6 +118,15 @@ Host scandium-tunnel wmd-pv-tunnel #2x6 core Xeon, 64GB mem
     Hostname chpc-scandium.bath.ac.uk
     ProxyCommand ssh lcpu nc %h %p
 
+Host iron  # 2x8 core Xeon (2.4GHz), 32 GB mem
+    User jarvist 
+    Hostname chpc-iron.bath.ac.uk
+
+Host iron-tunnel
+    User jarvist
+    Hostname chpc-iron.bath.ac.uk
+    ProxyCommand ssh lcpu nc %h %p
+
 #     _____  ____   ____   ____    ____
 #    | ____||  _ \ / ___| |  _ \  / ___|
 #    |  _|  | |_) |\___ \ | |_) || |

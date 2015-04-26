@@ -77,7 +77,8 @@ Host aquila-tunnel
 
 # BALENA - Bath new Cluster (2015)
 Host balena
-    User jms70  # only Jonathan currently
+    User jms70  
+# only Jonathan currently
     HostName balena.bath.ac.uk
     PreferredAuthentications publickey
 

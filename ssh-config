@@ -60,7 +60,7 @@ Host potassium workmac
     Hostname chmc-7602.campus.bath.ac.uk
     ProxyCommand ssh lcpu nc %h %p
 
-# These are specific to Aquila.  Note the use of ProxyCommand.
+# AQUILA - Bath Cluster
 Host aquila
     User jmf45
     HostName aquila.bath.ac.uk
@@ -74,6 +74,20 @@ Host aquila-tunnel
     PreferredAuthentications publickey
     ProxyCommand ssh lcpu nc %h %p
 
+
+# BALENA - Bath new Cluster (2015)
+Host balena
+    User jms70  # only Jonathan currently
+    HostName balena.bath.ac.uk
+    PreferredAuthentications publickey
+
+Host balena-tunnel
+    User jms70
+    HostName balena.bath.ac.uk
+    PreferredAuthentications publickey
+    ProxyCommand ssh lcpu nc %h %p
+
+# NEON - WMD Group mini cluster ( 12 nodes )
 Host neon chsv-wmd
     User jarvist
     HostName chsv-wmd.bath.ac.uk 
@@ -86,12 +100,12 @@ Host neon-tunnel
     HostName chsv-wmd.bath.ac.uk 
     ProxyCommand ssh lcpu nc %h %p
 
-# Group machines for general account abuse.
-Host chlorine tesla # Linux - :)
+# Group machines for general use (not clusters)
+Host chlorine tesla # Linux - :) - Redhat
     User jarvist
     Hostname chmc-chlorine.bath.ac.uk
 
-Host chlorine-tunnel tesla-tunnel # Linux?
+Host chlorine-tunnel tesla-tunnel # Linux
     User jarvist
     Hostname chmc-chlorine.bath.ac.uk
     ProxyCommand ssh lcpu nc %h %p
@@ -99,6 +113,8 @@ Host chlorine-tunnel tesla-tunnel # Linux?
 Host aluminium slave # Headless (?) i7 iMac
     User compchem
     Hostname chpc-aw10.bath.ac.uk
+
+# The Dell servers - 2014/2015, all ~24 hyperthread cores, 32-64GB mem
 
 Host titanium #2x6 core Xeon, 64GB mem
     User jarvist

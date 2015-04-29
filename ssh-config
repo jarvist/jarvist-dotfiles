@@ -1,3 +1,20 @@
+# Jarvist Moore Frost; 2014-2015
+#In levels of increasing subtlety, this ssh-config contains:-
+#* default usernames / shortened hostnames for Bath / IC / EPSRC national
+#facilities (bash autocomplete also reads these); this is more elegant and
+#general than doing the same with bash 'alias'
+#* Better default keep-alives, so that your SSH sessions are more robust to
+#being closed (matters a lot on dodgy wifi) 
+#* tunnelling over SSH via lcpu into bath.ac.uk resources (i.e. no need for
+#a VPN to get to Aquila / Neon etc.). These are the 'xxxx-tunnel' shortcuts.
+#* Master sessions enabled (further ssh / scp commands are tunnelled over the
+#master session, stopping you hammering the login nodes. It's almost instantly
+#fast to spawn another shell session, rather than TCP / SSH handshake, which
+#means SCP command paths autocomplete just as fast as 'cd'ing' on the login
+#node.)
+#
+#Nb: Rsync reads this file too
+
 # Global settings
 Host *
     Protocol 2 

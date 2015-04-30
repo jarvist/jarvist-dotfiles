@@ -94,13 +94,12 @@ Host aquila-tunnel
 
 # BALENA - Bath new Cluster (2015)
 Host balena
-    User jms70  
-# only Jonathan currently
+    User jmf02 
     HostName balena.bath.ac.uk
     PreferredAuthentications publickey
 
 Host balena-tunnel
-    User jms70
+    User jmf02 
     HostName balena.bath.ac.uk
     PreferredAuthentications publickey
     ProxyCommand ssh lcpu nc %h %p

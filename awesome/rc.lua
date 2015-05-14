@@ -40,7 +40,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
+beautiful.init("/home/jarvist/.config/awesome/theme.lua")
 
 -- Doesn't work...
 --  theme.wallpaper_cmd = { "awsetbg  ~/.icewm/London_rivers_dark_1024x768.jpg"}

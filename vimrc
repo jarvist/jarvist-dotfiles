@@ -114,6 +114,7 @@ if has('gui_running')
 else
     set background=dark
     let g:zenburn_high_Contrast=1
+    let g:zenburn_transparent = 1 " makes terminal background black
     colors zenburn
 endif
 

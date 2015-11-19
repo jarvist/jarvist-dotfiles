@@ -164,7 +164,7 @@ Host cobalt # 2x8 core (32 HT) E5-2630 @ 2.40GHz; 64GB mem
     User jarvist
     Hostname chpc-cobalt.bath.ac.uk
 
-Host cobald-tunnel
+Host cobalt-tunnel
     User jarvist
     Hostname chpc-cobalt.bath.ac.uk
     ProxyCommand ssh lcpu nc %h %p

@@ -15,7 +15,8 @@ mrxvt*cursorColor: #DCDCCC
 
 ! Zenburn
 
-mrxvt*background:  #3f3f3f
+#mrxvt*background:  #3f3f3f
+mrxvt*background: #000000
 mrxvt*foreground:  #dcdccc
 mrxvt*color0:      #1E2320
 mrxvt*color1:      #705050

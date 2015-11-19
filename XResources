@@ -44,7 +44,8 @@ xterm*eightBitInput:   true
 xterm*metaSendsEscape: true
 xterm*cursorColor: #DCDCCC
 ! Zenburn
-xterm*background:  #3f3f3f
+!  xterm*background:  #3f3f3f
+xterm*background: #000000
 xterm*foreground:  #dcdccc
 xterm*color0:      #1E2320
 xterm*color1:      #705050

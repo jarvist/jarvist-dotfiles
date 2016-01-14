@@ -15,6 +15,10 @@
 #
 #Nb: Rsync reads this file too
 
+Host *
+    UseRoaming no
+# Workaround for http://undeadly.org/cgi?action=article&sid=20160114142733
+
 # Global settings
 Host *
     Protocol 2 

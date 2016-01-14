@@ -224,7 +224,7 @@ TaskBarAtTop=1 # 0/1
 TaskBarShowAPMStatus=1 # 0/1
 
 #  Show APM status on task bar in time-format
-# TaskBarShowAPMTime=1 # 0/1
+TaskBarShowAPMTime=1 # 0/1
 
 #  Show mailbox status on task bar
 # TaskBarShowMailboxStatus=1 # 0/1
@@ -548,7 +548,7 @@ ShutdownCommand="sudo /sbin/shutdown -h now"
 # AddressBarCommand=""
 
 #  Network device to show status for
-NetworkStatusDevice="wlan0 eth0"
+NetworkStatusDevice="wlan0" # eth0"
 
 #  Clock Time format (strftime format string)
 # TimeFormat="%X"

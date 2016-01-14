@@ -9,7 +9,7 @@
 # You'll have to omit XK_ prefixs and to replace XF86XK_ prefixes by
 # XF86. Valid modifiers are Alt, Ctrl, Shift, Meta, Super and Hyper.
 #
-key "Alt+Ctrl+t"	mrxvt -fn terminus-16 -fb terminus-bold-16 -fg green -bg black -bt -g 310x85 -sl 65535
+key "Alt+Ctrl+t"	mrxvt -fn terminus-16 -fb terminus-bold-16 -fg white -bg black -bt -g 310x85 -sl 65535
 key "Alt+Ctrl+f"		fte
 key "Alt+Ctrl+e"		nedit
 key "Alt+Ctrl+g"		gimp
@@ -43,3 +43,16 @@ key "XF86Search"		sensible-browser http://www.yahoo.com/
 key "XF86Eject"			eject
 
 key "XF86LaunchA"		 mrxvt -xft -xftfn Inconsolata -fg white -bg black -bt -g 179x65 -xft -xftsz 14
+
+# From Awesome config
+#JMF: Backlight
+# -- NB: Offset values; so that you can get to super-dim 2% via 0-> Up -> Down
+# And can also span range with 2%+ fidelity
+#awful.key({ }, "XF86MonBrightnessDown", function ()
+#awful.util.spawn("xbacklight -dec 13") end),
+#awful.key({ }, "XF86MonBrightnessUp", function ()
+#awful.util.spawn("xbacklight -inc 15") end)
+ 
+key "XF86MonBrightnessDown" xbacklight -dec 13
+key "XF86MonBrightnessUp" xbacklight -inc 15
+

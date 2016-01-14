@@ -4,8 +4,8 @@
 # since modifications to this file will be discarded when you
 # (re)install icewm.
 #
-prog MRXVT xterm mrxvt -xft -xftfn Inconsolata -fg white -bg black -bt -g 179x65 -xft -xftsz 14 
-prog MRXVT-Terminus mrxvt mrxvt -fn terminus-16 -fb terminus-bold-16 -fg green -bg black -bt -g 310x85 -sl 65535
+prog URXVT xterm urxvt -fn terminus-16 -fb terminus-bold-16 -fg white -bg black -g 310x85 -sl 65535 
+prog MRXVT-Terminus mrxvt mrxvt -fn terminus-16 -fb terminus-bold-16 -fg white -bg black -bt -g 310x85 -sl 65535
 #x-terminal-emulator
 #prog FTE fte fte
 #prog Netscape netscape netscape

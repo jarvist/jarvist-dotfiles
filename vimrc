@@ -122,3 +122,7 @@ au BufNewFile,BufReadPost *.gin,*.gout,*.got        set ft=gin  "Shouldn't need 
 
 au BufNewFile,BufReadPost *.md                     set ft=markdown "as above...
 
+" See: http://stackoverflow.com/questions/21572179/vim-color-scheme-overriding-the-background-settings-in-gnome-terminal
+highlight Normal ctermbg=none 
+" disable highlighting --> transparency correct on tmux etc.
+highlight NonText ctermbg=none

@@ -71,6 +71,10 @@ alias vesta='open -a Vesta '
 alias hpc='ssh hpc ' #Home sweet home
 alias redshiftnow='redshift -l 51:0 -o '
 
+# Weather via wttr.in service to Wego command line app
+alias weatherbath='curl http://wttr.in/bath '
+alias weatherlondon='curl http://wttr.in/london '
+
 # set PATH so it includes user's private bin if it exists
 if [ -d ~/bin ] ; then
  PATH=~/bin:"${PATH}"

@@ -28,8 +28,9 @@ key "Alt+Ctrl+KP_Multiply"	aumix -v +5		# raise volume
 # pressing those keys and map those symbols by using xmodmap.
 
 key "XF86Standby"		killall -QUIT icewm
-key "XF86AudioLowerVolume"	aumix -v -5
-key "XF86AudioRaiseVolume"	aumix -v +5
+# Update for 2016 on Asriel ; Modern Alsamixer
+key "XF86AudioLowerVolume"  amixer -c 0 sset Master 4dB-	
+key "XF86AudioRaiseVolume"	amixer -c 0 sset Master 4dB+
 key "XF86AudioMute"		aumix -v 0
 key "XF86AudioPlay"		cdplay play 1
 key "XF86AudioStop"		cdplay stop

@@ -10,5 +10,5 @@ prog MRXVT-Terminus mrxvt mrxvt -fn terminus-16 -fb terminus-bold-16 -fg white -
 #prog FTE fte fte
 #prog Netscape netscape netscape
 prog    "gvim" vim /usr/bin/gvim -f
-prog    "Thunar" thunar thunar
+prog    "Thunar" /usr/share/icons/hicolor/16x16/apps/Thunar.png thunar
 prog "google-chrome" /usr/share/icons/hicolor/16x16/apps/google-chrome.png google-chrome

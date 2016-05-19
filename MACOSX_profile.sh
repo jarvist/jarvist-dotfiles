@@ -35,7 +35,8 @@ normal=`tput sgr0`
 case "$TERM" in
 xterm*|rxvt*)
     #PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    PS1="\[${TITLEBAR}${bold}\][\t]\u@\h:\w/ \n> \[${normal}\]"
+    #PS1="\[${TITLEBAR}${bold}\][\A]\u@\h:\w/ \n> \[${normal}\]"
+        PS1="\[${TITLEBAR}${bold}\][\D{%a%d%b-%R}]\u@\h:\w/ \n> \[${normal}\]"
     ;;
 *)
     ;;
@@ -74,6 +75,10 @@ alias redshiftnow='redshift -l 51:0 -o '
 # Weather via wttr.in service to Wego command line app
 alias weatherbath='curl http://wttr.in/bath '
 alias weatherlondon='curl http://wttr.in/london '
+
+# Check / Close SSH Master Connections (when X-forwarding suddenly breaks)
+alias ssh-MasterConnection-exit="ssh -O exit "
+alias ssh-MasterConnection-check="ssh -O check "
 
 # set PATH so it includes user's private bin if it exists
 if [ -d ~/bin ] ; then

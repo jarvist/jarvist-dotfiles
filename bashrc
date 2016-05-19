@@ -49,7 +49,8 @@ esac
 if [ "$color_prompt" = yes ]; then
 #    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 #    JARV's Two Line Prompt...
-    PS1="${TITLEBAR}${bold}[\t]\u@\h:\w/ \n> ${normal}"
+#    PS1="${TITLEBAR}${bold}[\t]\u@\h:\w/ \n> ${normal}"
+    PS1="\[${TITLEBAR}${bold}\][\D{%a%d%b-%R}]\u@\h:\w/ \n> \[${normal}\]"
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\n> '
 fi

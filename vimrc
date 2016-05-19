@@ -12,8 +12,9 @@ set nocompatible
 " F7 to toggle spell-checking
 map <silent> <F7> :set nospell!<CR>:set nospell?<CR>
 "
-" " F2 for paste toggle with a status display
-nnoremap <F2> :set invpaste paste?<CR>
+" " F6 for paste toggle with a status display
+" Moved to F6 as on my Mac F1-F4 all do stuff
+nnoremap <F6> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
@@ -95,14 +96,16 @@ set autochdir
 
 "The below are motivated by watching Damian Conway on vim:
 "https://www.youtube.com/watch?v=aHm36-na4-4
-" Remap ; to :, so I don't have to shift...
+" Remap ; to :, so I don't have to press shift...
 nnoremap ; :
 
-" Flick of colour on Column line 81, but only 81 (to spot long lines)
+" Flick of colour on Column line 81, but only 81 (to spot long lines, without
+" too much distraction)
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn','\%81v',100)
 
-"Jump to old line...
+"Jump to previous line edited when reopening. (I often quit, recompile, come
+"back to vim, it's useful to be at the same point...)
 if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
@@ -119,7 +122,6 @@ else
 endif
 
 au BufNewFile,BufReadPost *.gin,*.gout,*.got        set ft=gin  "Shouldn't need this, but getting overridden
-
 au BufNewFile,BufReadPost *.md                     set ft=markdown "as above...
 
 " See: http://stackoverflow.com/questions/21572179/vim-color-scheme-overriding-the-background-settings-in-gnome-terminal

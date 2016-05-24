@@ -34,9 +34,12 @@ normal=`tput sgr0`
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    #PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    #PS1="\[${TITLEBAR}${bold}\][\A]\u@\h:\w/ \n> \[${normal}\]"
-        PS1="\[${TITLEBAR}${bold}\][\D{%a%d%b-%R}]\u@\h:\w/ \n> \[${normal}\]"
+# Compact Two line Prompt with 
+# [WeekdayDateMonth-Hour:Minute]user@host:~/directory/
+# Looks Like:
+# [Tue24May-12:55]jarvist@chmc-7602:~/
+# > 
+    PS1="\[${TITLEBAR}${bold}\][\D{%a%d%b-%R}]\u@\h:\w/ \n> \[${normal}\]"
     ;;
 *)
     ;;
@@ -70,7 +73,7 @@ alias vesta='open -a Vesta '
 
 # Alias definitions.
 alias hpc='ssh hpc ' #Home sweet home
-alias redshiftnow='redshift -l 51:0 -o '
+alias redshiftnow='redshift -l 51:0 -o ' # Linux laptop 'redshit'
 
 # Weather via wttr.in service to Wego command line app
 alias weatherbath='curl http://wttr.in/bath '
@@ -107,3 +110,10 @@ shopt -s checkwinsize
 
 echo -e "${bold}     GREETINGS PROFESSOR FALKEN.  SHALL WE PLAY A GAME?${normal}"
 tmux list-sessions 2> /dev/null # list tmux sessions, don't show anything if none...
+
+# Requires GNU expr and other tools; doesn't work on Mac OSX :(
+#theend=` date --date "1 November 2016 17:00" +%s `
+#now=` date  +%s `
+#diff=` expr $theend - $now `
+#echo "Really Unemployed in: " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
+

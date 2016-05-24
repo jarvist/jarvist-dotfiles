@@ -47,21 +47,22 @@ esac
 
 
 if [ "$color_prompt" = yes ]; then
-#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-#    JARV's Two Line Prompt...
-#    PS1="${TITLEBAR}${bold}[\t]\u@\h:\w/ \n> ${normal}"
-    PS1="\[${TITLEBAR}${bold}\][\D{%a%d%b-%R}]\u@\h:\w/ \n> \[${normal}\]"
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\n> '
 fi
 unset color_prompt force_color_prompt
 
+# Compact Two line Prompt with
+# [WeekdayDateMonth-Hour:Minute]user@host:~/directory/
+# Looks Like:
+# [Tue24May-12:55]jarvist@chmc-7602:~/
+# >
+PS1="\[${TITLEBAR}${bold}\][\D{%a%d%b-%R}]\u@\h:\w/ \n> \[${normal}\]"
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto '
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto '
     alias fgrep='fgrep --color=auto '

@@ -8,7 +8,7 @@ echo "WARNING: I haven't used this in a while! Things may be missing."
 
 ########## Variables
 
-dir=~/filthy-dotfiles                    # dotfiles directory
+dir=~/jarvist-dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 files="bashrc gitconfig mrxvtrc vimrc vim icewm moc fonts dircolors XResources inputrc editrc" #zshrc oh-my-zsh private scrotwm.conf Xresources"    # list of files/folders to symlink in homedir
 

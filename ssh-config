@@ -193,3 +193,14 @@ Host ultrafox fox ultra
     User pr1ujarv
     HostName login.archer.ac.uk
 
+# ____    _    ____  _____ ____  ____  _   _ ______   __
+# |  _ \  / \  |  _ \| ____/ ___|| __ )| | | |  _ \ \ / /
+# | | | |/ _ \ | |_) |  _| \___ \|  _ \| | | | |_) \ V /
+# | |_| / ___ \|  _ <| |___ ___) | |_) | |_| |  _ < | |
+# |____/_/   \_\_| \_\_____|____/|____/ \___/|_| \_\|_|
+
+Host wonder napier iden
+    User jmf49-pxs03
+    HostName phase2.wonder.hartree.stfc.ac.uk
+
+

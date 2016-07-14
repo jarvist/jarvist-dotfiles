@@ -64,6 +64,12 @@ alias l='ls -CF'
 
 alias ls='ls -Gp'
 
+whiteboardme() { 
+# via https://gist.github.com/lelandbatey/8677901
+convert "$1" -morphology Convolve DoG:15,100,0 -negate -normalize -blur 0x1 -channel RBG -level 60%,91%,0.1 "$2" 
+}
+alias whiteboard=whiteboardme
+
 alias datestamp='rename "s/^/`date +%Y-%m-%d`-JarvistMooreFrost-/" '
 
 alias ase="source ~/Virtualenvs/python-ase-3.8.1.3440/bin/activate"
@@ -72,7 +78,8 @@ alias ase="source ~/Virtualenvs/python-ase-3.8.1.3440/bin/activate"
 alias vesta='open -a Vesta '
 
 # Alias definitions.
-alias hpc='ssh hpc ' #Home sweet home
+#alias hpc='ssh hpc ' #Home sweet home
+
 alias redshiftnow='redshift -l 51:0 -o ' # Linux laptop 'redshit'
 
 # Weather via wttr.in service to Wego command line app

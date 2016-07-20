@@ -54,6 +54,7 @@ key "XF86LaunchA"		 mrxvt -xft -xftfn Inconsolata -fg white -bg black -bt -g 179
 #awful.key({ }, "XF86MonBrightnessUp", function ()
 #awful.util.spawn("xbacklight -inc 15") end)
  
-key "XF86MonBrightnessDown" xbacklight -dec 13
-key "XF86MonBrightnessUp" xbacklight -inc 15
+# time = number of miliseconds for fade; not needed with small increments.
+key "XF86MonBrightnessDown" xbacklight -time 0 -dec 13
+key "XF86MonBrightnessUp" xbacklight -time 0 -inc 15
 

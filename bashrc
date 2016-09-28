@@ -85,6 +85,13 @@ alias blueshift='redshift -O 5600' #I'm good with daylight
 # Output full set of 256 termcolours for when I'm playing with colourschemes
 alias termcolours='for x in 0 1 4 5 7 8; do for i in `seq 30 37`; do for a in `seq 40 47`; do echo -ne "\e[$x;$i;$a""m\\\e[$x;$i;$a""m\e[0;37;40m "; done; echo; done; done; echo "";'
 
+# Bash key bindings
+alias bashbindings="bind -p | grep -v '^#\|self-insert\|^$' "
+
+# set title of current terminal 
+function setTerminalTitle { echo -ne "\033]0;${1}\007"; } 
+alias termtitle=setTerminalTitle
+
 # Oh god I'm turning into a mac head; these enables you to 'open File' and it'll do a Mime-esque guess
 alias open='xdg-open'
 

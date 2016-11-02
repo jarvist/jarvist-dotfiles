@@ -90,14 +90,22 @@ alias weatherlondon='curl http://wttr.in/london '
 alias ssh-MasterConnection-exit="ssh -O exit "
 alias ssh-MasterConnection-check="ssh -O check "
 
+# Background noise; seen before elsewhere, but these are from: https://news.ycombinator.com/item?id=12851409
+alias play-pinknoise="play -n -n --combine merge synth pinknoise band -n 1200 1800 tremolo 50 10 tremolo 0.14 70 tremolo 0.2 50 gain  -10"
+alias play-ocean="play -n -n --combine merge synth pinknoise band -n 1200 1800 tremolo 50 10 tremolo 0.14 70 tremolo 0.2 50 gain  -10"
+alias play-enterprise="play -c2 -n synth whitenoise band -n 100 24 band -n 300 100 gain +20"
+
 # set PATH so it includes user's private bin if it exists
 if [ -d ~/bin ] ; then
  PATH=~/bin:"${PATH}"
 fi
+if [ -d ~/hpc-bin ] ; then
+ PATH=~/hpc-bin:"${PATH}"
+fi
+if [ -d ~/Library/Python/2.7/bin/  ] ; then
+    PATH="{$PATH}":~/Library/Python/2.7/bin/
+fi
 export PATH
-
-PYTHONPATH=/Users/jarvist/REPOSITORY/phonopy/lib/python:/usr/local/lib/python2.7/site-packages
-export PYTHONPATH
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

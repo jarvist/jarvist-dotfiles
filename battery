@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Battery status via AWK and cat from the /sys interface on my little Stinkpad X220; running some Debian
+
+status=` cat /sys/class/power_supply/BAT0/status `
+percent=` cat /sys/class/power_supply/BAT0/capacity `
+power=` cat /sys/class/power_supply/BAT0/power_now `
+energy=`cat /sys/class/power_supply/BAT0/energy_now `
+timeleft=` awk 'BEGIN{printf("%.2f\n",'${energy}'/'${power}') }' `
+power=` awk 'BEGIN{ printf("%.2f\n",'${power}'/1000000) }' ` 
+
+echo "Battery0: ${status}. ${percent}% ; Power ${power} W ; TTL ${timeleft} hrs"
+
+energy_full=` cat /sys/class/power_supply/BAT0/energy_full `
+energy_full_design=` cat /sys/class/power_supply/BAT0/energy_full_design `
+health=` awk 'BEGIN{ printf("%.2f\n",100.0*'${energy_full}'/'${energy_full_design}') }' `
+
+kwhr=` awk 'BEGIN{ printf("%.2f\n",'${energy_full}'/1000000) }' ` 
+echo "Battery Charge when full: $kwhr kWhr, $health % of Design Capacity"

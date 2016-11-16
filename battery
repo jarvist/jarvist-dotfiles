@@ -16,4 +16,6 @@ energy_full_design=` cat /sys/class/power_supply/BAT0/energy_full_design `
 health=` awk 'BEGIN{ printf("%.2f\n",100.0*'${energy_full}'/'${energy_full_design}') }' `
 
 kwhr=` awk 'BEGIN{ printf("%.2f\n",'${energy_full}'/1000000) }' ` 
-echo "Battery Charge when full: $kwhr kWhr, $health % of Design Capacity"
+designkwhr=` awk 'BEGIN{ printf("%.2f\n",'${energy_full_design}'/1000000) }' ` 
+
+echo "Battery Energy when full: $kwhr kWhr, $health % of Design Capacity ($designkwhr kWhr)"

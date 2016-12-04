@@ -11,7 +11,10 @@ mrxvt*highlightSelection: true
 mrxvt*utf8:            2
 mrxvt*eightBitInput:   true
 mrxvt*metaSendsEscape: true
-mrxvt*cursorColor: #DCDCCC
+
+#mrxvt*cursorColor: #DCDCCC
+mrxvt.cursorColor:  #FFDCE2 
+#V Light pink
 
 ! Zenburn
 
@@ -34,4 +37,9 @@ mrxvt*color12:     #94bff3
 mrxvt*color13:     #ec93d3
 mrxvt*color14:     #93e0e3
 mrxvt*color15:     #ffffff
+
+# From http://humdi.net/wiki/tips/configuring-mrxvt
+# Terminus (doesn't have bold versions for 12 point size)
+mrxvt.font: -xos4-terminus-medium-r-normal-*-12-*-*-*-*-*-iso8859-1
+mrxvt.boldFont: -xos4-terminus-bold-r-normal-*-12-*-*-*-*-*-iso8859-1
 

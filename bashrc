@@ -5,6 +5,9 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+#Kick vim to give full colour, please. This might cause bad things to happen if logging in with some ancient terminal emulator.
+export TERM=xterm-256color
+
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace
@@ -13,8 +16,8 @@ HISTCONTROL=ignoredups:ignorespace
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=100000
+HISTFILESIZE=200000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -28,38 +31,12 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
-fi
-
-# Override if we detect xterm suggesting color (logged in servers, tmux etc.) 
-case "$TERM" in
-    xterm-color) color_prompt=yes;;
-    xterm-256color) color_prompt=yes;;
-esac
-
-
-if [ "$color_prompt" = yes ]; then
 # Compact Two line Prompt with
 # [WeekdayDateMonth-Hour:Minute]user@host:~/directory/
 # Looks Like:
 # [Tue24May-12:55]jarvist@chmc-7602:~/
 # >
- PS1="\[${TITLEBAR}${bold}\][\D{%a%d%b-%R}]\u@\h:\w/ \n> \[${normal}\]"
-
-else
- PS1="\[${TITLEBAR}${bold}\][\D{%a%d%b-%R}]\u@\h:\w/ \n> \[${normal}\]"
-
- #  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\n> '
-fi
-unset color_prompt force_color_prompt
+PS1="\[${TITLEBAR}${bold}\][\D{%a%d%b-%R}]\u@\h:\w/ \n> \[${normal}\]"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -71,16 +48,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto '
 fi
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
 # Alias definitions.
-alias hpc='ssh hpc ' #Home sweet home; though actually most of these are ssh-config now
-# These use the pleasantly simple https://github.com/jonls/redshift/ to change colour temperature
-alias redshiftnow='redshift -l 51:0 -o ' #Hardcoded to London; this is where it's at.
-alias blueshift='redshift -O 5600' #I'm good with daylight
 
 # Output full set of 256 termcolours for when I'm playing with colourschemes
 alias termcolours='for x in 0 1 4 5 7 8; do for i in `seq 30 37`; do for a in `seq 40 47`; do echo -ne "\e[$x;$i;$a""m\\\e[$x;$i;$a""m\e[0;37;40m "; done; echo; done; done; echo "";'
@@ -88,12 +56,22 @@ alias termcolours='for x in 0 1 4 5 7 8; do for i in `seq 30 37`; do for a in `s
 # Bash key bindings
 alias bashbindings="bind -p | grep -v '^#\|self-insert\|^$' "
 
-# set title of current terminal 
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# set title of current terminal to `termtitle FOO` 
 function setTerminalTitle { echo -ne "\033]0;${1}\007"; } 
 alias termtitle=setTerminalTitle
 
+# LINUX SPECIFIC
 # Oh god I'm turning into a mac head; these enables you to 'open File' and it'll do a Mime-esque guess
 alias open='xdg-open'
+# These use the pleasantly simple https://github.com/jonls/redshift/ to change colour temperature
+alias redshiftnow='redshift -l 51:0 -o ' #Hardcoded to London; this is where it's at.
+alias blueshift='redshift -O 5600' #I'm good with daylight
+
 
 # set PATH so it includes user's private bin if it exists
 if [ -d ~/bin ] ; then
@@ -110,8 +88,6 @@ export PYTHONPATH
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-#Kick vim to give full colour, please
-export TERM=xterm-256color
 
 if [ -n "$DISPLAY" ]; then
     xset b off

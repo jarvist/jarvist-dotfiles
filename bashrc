@@ -155,8 +155,14 @@ echo -e "${bold}     GREETINGS PROFESSOR FALKEN.  SHALL WE PLAY A GAME?${normal}
 
 tmux list-sessions 2> /dev/null # list tmux sessions, don't show anything if none...
 
+# Only on Linux currently! should rewrite this...
+case "$OSTYPE" in
+linux*) # Mac (OSX)
 # Countdown to next end of PDRA contract / life event
 theend=` date --date "23 July 2016 13:30" +%s `
 now=` date  +%s `
 diff=` expr $theend - $now `
 echo "Really Married in: " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
+;;
+esac
+

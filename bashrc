@@ -76,8 +76,12 @@ alias play-enterprise="play -c2 -n synth whitenoise band -n 100 24 band -n 300 1
 
 # Internet Radios
 # Soma FM
-alias soma-dronezone='mplayer -playlist http://somafm.com/dronezone130.pls'
-alias soma-groovesalad='mplayer -playlist http://somafm.com/groovesalad130.pls'
+alias soma-dronezone='mplayer -playlist http://somafm.com/dronezone130.pls '
+alias soma-groovesalad='mplayer -playlist http://somafm.com/groovesalad130.pls '
+alias soma-folkforward='mplayer -playlist http://somafm.com/folkfwd130.pls '
+alias soma-underground80s='mplayer -playlist http://somafm.com/u80s130.pls '
+alias soma-missioncontrol='mplayer -playlist http://somafm.com/missioncontrol64.pls ' # Only 64 kbps stream?
+
 # BBC: What else do you need other than R4 and R6?  :)
 # Latest working playlists from: https://gist.github.com/noodlebug/0e5e3754f4e8dbf608e72431b9c34484
 alias r6='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_6music.m3u8 '

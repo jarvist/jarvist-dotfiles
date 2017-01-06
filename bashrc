@@ -81,11 +81,12 @@ alias soma-groovesalad='mplayer -playlist http://somafm.com/groovesalad130.pls '
 alias soma-folkforward='mplayer -playlist http://somafm.com/folkfwd130.pls '
 alias soma-underground80s='mplayer -playlist http://somafm.com/u80s130.pls '
 alias soma-missioncontrol='mplayer -playlist http://somafm.com/missioncontrol64.pls ' # Only 64 kbps stream?
-
 # BBC: What else do you need other than R4 and R6?  :)
 # Latest working playlists from: https://gist.github.com/noodlebug/0e5e3754f4e8dbf608e72431b9c34484
 alias r6='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_6music.m3u8 '
 alias r4=' mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_radio_fourfm.m3u8 '
+# Via: 
+alias radio-resonanceFM='mplayer -playlist http://stream.resonance.fm:8000/resonance '
 
 alias datestamp='rename "s/^/`date +%Y-%m-%d`-JarvistMooreFrost-/" '
 
@@ -114,7 +115,11 @@ if [ -d ~/hpc-bin ] ; then
  PATH=~/hpc-bin:"${PATH}"
 fi
 if [ -d ~/Library/Python/2.7/bin/  ] ; then
-    PATH="{$PATH}":~/Library/Python/2.7/bin/
+    PATH="${PATH}":~/Library/Python/2.7/bin/
+fi
+# MacTeX on modern Mac
+if [ -d /Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin/ ] ; then
+    PATH="${PATH}":/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin/
 fi
 export PATH
 

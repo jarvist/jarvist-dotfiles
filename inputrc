@@ -3,7 +3,11 @@ $if mode=vi
 set keymap vi-command
 "gg": beginning-of-history
 "G": end-of-history
+"\C-l": clear-screen
+
 set keymap vi-insert
 "jj": vi-movement-mode
-"\C-p": history-search-backward C-L: clear-screen
+"\C-p": history-search-backward 
+"\C-l": clear-screen
 
+$endif

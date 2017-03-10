@@ -15,8 +15,8 @@
 #
 #Nb: Rsync reads this file too
 
-Host *
-    UseRoaming no
+#Host *
+#   UseRoaming no
 # Workaround for http://undeadly.org/cgi?action=article&sid=20160114142733
 
 # Global settings
@@ -52,6 +52,23 @@ Host union
     User jmf02
     ForwardAgent yes 
 #above ForwardAgent allows access to github via local machine keys
+
+# Imperial's SSH gate-way
+Host sshgw
+    HostName sshgw.ic.ac.uk
+    User jmf02
+#    ForwardAgent yes
+
+Host gabor # Jarv's work MAC
+    Hostname 129.31.136.247
+    User jarvist
+
+Host gabor-tunnel 
+    HostName  129.31.136.247
+    User jarvist
+    ProxyCommand ssh -W %h:%p sshgw
+# Does not current work, as SSHGW does not allow -W ?
+# Jarv's Work Mac in RSM; >Sept 2016
 
 #     ____     _   _____  _   _
 #    | __ )   / \ |_   _|| | | |

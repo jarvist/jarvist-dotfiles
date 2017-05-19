@@ -5,7 +5,8 @@
 # (re)install icewm.
 #
 prog URXVT xterm urxvt -fn terminus-20 -fb terminus-bold-20 -fg white -bg black -g 310x85 -sl 65535 
-prog MRXVT-Terminus mrxvt mrxvt -fn terminus-16 -fb terminus-bold-16 -fg white -bg black -bt -g 310x85 -sl 65535
+#prog MRXVT-Terminus mrxvt mrxvt -fn terminus-16 -fb terminus-bold-16 -fg white -bg black -bt -g 310x85 -sl 65535
+prog MRXVT-Terminus mrxvt mrxvt -bt -g 310x85 -sl 65535
 #x-terminal-emulator
 #prog FTE fte fte
 #prog Netscape netscape netscape

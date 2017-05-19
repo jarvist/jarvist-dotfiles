@@ -1,3 +1,4 @@
+! I set these long ago...
 mrxvt*internalBorder:        0
 mrxvt*loginShell:         true
 mrxvt*scrollBar:         false
@@ -6,6 +7,11 @@ mrxvt*cursorBlink:       false
 mrxvt*saveLines:         65535
 mrxvt*dynamicColors:        on
 mrxvt*highlightSelection: true
+
+! 2017-05 - attempt to bootstrap unicode
+! Blogpost by ex-author:
+! https://wiki.math.cmu.edu/iki/wiki/tips/20140914-utf8.html
+! Mrxvt.profile0.command: env LANG=en_GB bash 
 
 ! Appearance
 mrxvt*utf8:            2
@@ -40,6 +46,26 @@ mrxvt*color15:     #ffffff
 
 # From http://humdi.net/wiki/tips/configuring-mrxvt
 # Terminus (doesn't have bold versions for 12 point size)
-mrxvt.font: -xos4-terminus-medium-r-normal-*-12-*-*-*-*-*-iso8859-1
-mrxvt.boldFont: -xos4-terminus-bold-r-normal-*-12-*-*-*-*-*-iso8859-1
+mrxvt.font: -xos4-terminus-medium-r-normal-*-16-*-*-*-*-*-iso8859-1
+mrxvt.boldFont: -xos4-terminus-bold-r-normal-*-16-*-*-*-*-*-iso8859-1
 
+# Tomorrow Night Bright
+#mrxvt*foreground:   #eaeaea
+#mrxvt*background:   #000000
+#mrxvt*cursorColor:  #aeafad
+#mrxvt*color0:       #000000
+#mrxvt*color1:       #912226
+#mrxvt*color2:       #778900
+#mrxvt*color3:       #ae7b00
+#mrxvt*color4:       #1d2594
+#mrxvt*color5:       #682a9b
+#mrxvt*color6:       #2b6651
+#mrxvt*color7:       #929593
+#mrxvt*color8:       #666666
+#mrxvt*color9:       #cc6666
+#mrxvt*color10:      #b5bd68
+#mrxvt*color11:      #f0c674
+#mrxvt*color12:      #81a2be
+#mrxvt*color13:      #b294bb
+#mrxvt*color14:      #8abeb7
+#mrxvt*color15:      #ecebec

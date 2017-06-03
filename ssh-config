@@ -210,6 +210,10 @@ Host ultrafox fox ultra
     User pr1ujarv
     HostName login.archer.ac.uk
 
+Host FRISC frisky risky risk risc
+    User pr1ujarl
+    Hostname login.archer.ac.uk
+
 # ____    _    ____  _____ ____  ____  _   _ ______   __
 # |  _ \  / \  |  _ \| ____/ ___|| __ )| | | |  _ \ \ / /
 # | | | |/ _ \ | |_) |  _| \___ \|  _ \| | | | |_) \ V /

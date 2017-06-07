@@ -225,4 +225,9 @@ Host wonder napier iden
     User jmf49-pxs03
     HostName phase2.wonder.hartree.stfc.ac.uk
 
+# Home Net
 
+Host pi raspberry
+    User pi
+    HostName raspberrypi.local
+    # I don't know with what DNS magic this works. But it does.

@@ -57,6 +57,7 @@ fi
 # Alias definitions.
 whiteboardme() {
 # via https://gist.github.com/lelandbatey/8677901
+# simplifies and blends a photograph of a whiteboard into some more Kahn-academy esque
 convert "$1" -morphology Convolve DoG:15,100,0 -negate -normalize -blur 0x1 -channel RBG -level 60%,91%,0.1 "$2"
 }
 alias whiteboard=whiteboardme
@@ -156,6 +157,9 @@ alias open='xdg-open'
 alias redshiftnow='redshift -l 51:0 -o ' #Hardcoded to London; this is where it's at.
 alias redshiftnight='redshift -O 3700'
 alias blueshift='redshift -O 5600' #I'm good with daylight
+
+alias bright='xbacklight -time 0 -set 100'
+alias dim='xbacklight -time 0 -set 10'
 ;;
 esac
 

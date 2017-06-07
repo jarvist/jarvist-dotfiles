@@ -86,9 +86,10 @@ Host *.bath.ac.uk
 #    IdentityFile /home/jarvist/.ssh/bath_rsa
  
 # These settings are specific to LCPU
-Host lcpu
+Host lcpu linux.bath
     User jmf45
-    HostName lcpu.bath.ac.uk
+#    HostName lcpu.bath.ac.uk # retiring July 2017; Long live LCPU!
+    HostName linux.bath.ac.uk 
 #    PreferredAuthentications publickey
 #    IdentityFile /home/jarvist/.ssh/bath_rsa
  

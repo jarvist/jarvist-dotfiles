@@ -76,6 +76,8 @@ alias play-ocean="play -n -n --combine merge synth pinknoise band -n 1200 1800 t
 alias play-enterprise="play -c2 -n synth whitenoise band -n 100 24 band -n 300 100 gain +20"
 
 # Internet Radios
+# London's resonance FM
+alias radio-resonanceFM='mplayer -playlist http://stream.resonance.fm:8000/resonance '
 # Soma FM
 alias soma-dronezone='mplayer -playlist http://somafm.com/dronezone130.pls '
 alias soma-groovesalad='mplayer -playlist http://somafm.com/groovesalad130.pls '
@@ -84,10 +86,11 @@ alias soma-underground80s='mplayer -playlist http://somafm.com/u80s130.pls '
 alias soma-missioncontrol='mplayer -playlist http://somafm.com/missioncontrol64.pls ' # Only 64 kbps stream?
 # BBC: What else do you need other than R4 and R6?  :)
 # Latest working playlists from: https://gist.github.com/noodlebug/0e5e3754f4e8dbf608e72431b9c34484
-alias r6='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_6music.m3u8 '
-alias r4=' mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_radio_fourfm.m3u8 '
-# Via: 
-alias radio-resonanceFM='mplayer -playlist http://stream.resonance.fm:8000/resonance '
+# Fiddled with URLS until I got High Res streams (within UK), 2017-06-07
+alias r6low='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_6music.m3u8 '
+alias r6='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_6music.m3u8 '
+alias r4low=' mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_radio_fourfm.m3u8 ' # 44.6 kbps stream
+alias r4='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_radio_fourfm.m3u8 ' # UK only perhaps? 130 kbps stream
 
 alias datestamp='rename "s/^/`date +%Y-%m-%d`-JarvistMooreFrost-/" '
 

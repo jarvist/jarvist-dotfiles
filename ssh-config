@@ -43,8 +43,11 @@ ControlPath ~/.ssh/control:%h:%p:%r
 #    |___|  \____| 
 
 # Imperial hosts - need VPN to be on / inside IC wireless
-Host hpc
+Host hpc cx1
     HostName login.cx1.hpc.ic.ac.uk
+    User jmf02
+Host hpc cx2
+    HostName login.cx2.hpc.ic.ac.uk
     User jmf02
 
 Host union

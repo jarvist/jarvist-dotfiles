@@ -234,3 +234,14 @@ Host pi raspberry
     User pi
     HostName raspberrypi.local
     # I don't know with what DNS magic this works. But it does.
+
+#  _   _  ____ _
+#  | | | |/ ___| |
+#  | | | | |   | |
+#  | |_| | |___| |___
+#   \___/ \____|_____|
+#
+
+Host thomas young
+    User mmm0096
+    HostName thomas.rc.ucl.ac.uk

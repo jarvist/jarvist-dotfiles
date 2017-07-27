@@ -683,15 +683,14 @@ NetworkStatusDevice="wlan0" # eth0"
 # KeySysAddressBar="Alt+Ctrl+Space"
 
 #  
-# KeySysWorkspacePrev="Alt+Ctrl+Left"
-
-#  
-# KeySysWorkspaceNext="Alt+Ctrl+Right"
-
-#  
-# KeySysWorkspaceLast="Alt+Ctrl+Down"
-
-#  
+KeySysWorkspacePrev="Alt+Ctrl+Left"
+KeySysWorkspaceNext="Alt+Ctrl+Right"
+  
+# "Previous workspace" shortcut
+#KeySysWorkspacePrev="F9"
+# "Next workspace" shortcut
+#KeySysWorkspaceNext="F10"
+  
 # KeySysWorkspacePrevTakeWin="Alt+Ctrl+Shift+Left"
 
 #  
@@ -1257,7 +1256,7 @@ ColorNetIdle="rgb:90/90/90"
 
 #  
 
-WorkspaceNames=" 1 ", " 2 ", " 3 ", " 4 "
+WorkspaceNames="1", "2", "3", "4"
 
 #
 # icewmbg preferences
@@ -1287,8 +1286,4 @@ DesktopBackgroundImage="/home/jarvist/.icewm/background.jpg"
 #  Image to announce for semi-transparent windows
 # DesktopTransparencyImage=""
 
-#  
-# "Previous workspace" shortcut
-KeySysWorkspacePrev="F19"
-# "Next workspace" shortcut
-KeySysWorkspaceNext="F20"
+

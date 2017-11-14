@@ -148,8 +148,9 @@ darwin*) # Mac (OSX)
 alias vesta='open -a Vesta '
 alias ase="source ~/Virtualenvs/python-ase-3.8.1.3440/bin/activate"
 
-PYTHONPATH=/Users/jarvist/REPOSITORY/phonopy/lib/python:/usr/local/lib/python2.7/site-packages
-export PYTHONPATH
+# This was for Phonopy work. Now borks up Anaconda modern matplotlib.
+#PYTHONPATH=/Users/jarvist/REPOSITORY/phonopy/lib/python:/usr/local/lib/python2.7/site-packages
+#export PYTHONPATH
 
 ;;
 linux-gnu*) # Debian
@@ -182,3 +183,6 @@ echo "Really Married in: " `expr $diff / 86400`  days  `expr \( $diff % 86400 \)
 ;;
 esac
 
+
+# added by Anaconda2 4.4.0 installer
+export PATH="/Users/jarvist/anaconda/bin:$PATH"

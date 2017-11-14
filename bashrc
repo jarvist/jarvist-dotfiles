@@ -180,6 +180,11 @@ theend=` date --date "23 July 2016 13:30" +%s `
 now=` date  +%s `
 diff=` expr $theend - $now `
 echo "Really Married in: " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
+
+theend=` date --date "11 July 2017 20:20" +%s `
+now=` date  +%s `
+diff=` expr $now - $theend  `
+echo "Last struck by lighting" `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds ago.
 ;;
 esac
 

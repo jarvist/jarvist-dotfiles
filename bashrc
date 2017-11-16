@@ -84,13 +84,18 @@ alias soma-groovesalad='mplayer -playlist http://somafm.com/groovesalad130.pls '
 alias soma-folkforward='mplayer -playlist http://somafm.com/folkfwd130.pls '
 alias soma-underground80s='mplayer -playlist http://somafm.com/u80s130.pls '
 alias soma-missioncontrol='mplayer -playlist http://somafm.com/missioncontrol64.pls ' # Only 64 kbps stream?
+
 # BBC: What else do you need other than R4 and R6?  :)
 # Latest working playlists from: https://gist.github.com/noodlebug/0e5e3754f4e8dbf608e72431b9c34484
 # Fiddled with URLS until I got High Res streams (within UK), 2017-06-07
+# Low res ~ 44.6 kbps
+# High res ~ 130 kbps
 alias r6low='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_6music.m3u8 '
 alias r6='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_6music.m3u8 '
-alias r4low=' mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_radio_fourfm.m3u8 ' # 44.6 kbps stream
-alias r4='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_radio_fourfm.m3u8 ' # UK only perhaps? 130 kbps stream
+alias r4low=' mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_radio_fourfm.m3u8 ' 
+alias r4='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_radio_fourfm.m3u8 ' 
+alias r3low=' mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_radio_three.m3u8 ' 
+alias r3='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_radio_three.m3u8 ' 
 
 alias datestamp='rename "s/^/`date +%Y-%m-%d`-JarvistMooreFrost-/" '
 
@@ -184,7 +189,7 @@ echo "Really Married in: " `expr $diff / 86400`  days  `expr \( $diff % 86400 \)
 theend=` date --date "11 July 2017 20:20" +%s `
 now=` date  +%s `
 diff=` expr $now - $theend  `
-echo "Last struck by lighting" `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds ago.
+echo "Last struck by lightning" `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds ago.
 ;;
 esac
 

@@ -1,3 +1,5 @@
+"set tenc=latin1 " Filthy hack for MRXVT
+
 filetype off
 call pathogen#incubate()
 filetype plugin indent on   " detect file type and load indents and plugins
@@ -58,7 +60,12 @@ set showcmd
 set hidden
 set wildmenu
 set wildmode=list:longest
+
 set visualbell
+set t_vb=
+" Set visual bell (no beep); but then set visualbell command to null. (No
+" beeps, no screen tearing visual bell.)
+
 set cursorline
 set ttyfast
 set ruler

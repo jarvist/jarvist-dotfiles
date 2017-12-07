@@ -31,6 +31,9 @@ urxvt*urgentOnBell:	True
 ! TABS
 URxvt.perl-ext-common: ...,tabbed,...
 
+XTerm*visualBell:  False 
+! causes screen tearing (no composing X-windows manager)
+
 !{{{ XTERM
 xterm*internalBorder:        0
 xterm*loginShell:         true

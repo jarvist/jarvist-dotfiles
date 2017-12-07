@@ -8,6 +8,9 @@ mrxvt*saveLines:         65535
 mrxvt*dynamicColors:        on
 mrxvt*highlightSelection: true
 
+mrxvt*visualBell:       false 
+! screen tearing...
+
 ! 2017-05 - attempt to bootstrap unicode
 ! Blogpost by ex-author:
 ! https://wiki.math.cmu.edu/iki/wiki/tips/20140914-utf8.html

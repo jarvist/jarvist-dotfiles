@@ -84,13 +84,18 @@ alias soma-groovesalad='mplayer -playlist http://somafm.com/groovesalad130.pls '
 alias soma-folkforward='mplayer -playlist http://somafm.com/folkfwd130.pls '
 alias soma-underground80s='mplayer -playlist http://somafm.com/u80s130.pls '
 alias soma-missioncontrol='mplayer -playlist http://somafm.com/missioncontrol64.pls ' # Only 64 kbps stream?
+
 # BBC: What else do you need other than R4 and R6?  :)
 # Latest working playlists from: https://gist.github.com/noodlebug/0e5e3754f4e8dbf608e72431b9c34484
 # Fiddled with URLS until I got High Res streams (within UK), 2017-06-07
+# Low res ~ 44.6 kbps
+# High res ~ 130 kbps
 alias r6low='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_6music.m3u8 '
 alias r6='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_6music.m3u8 '
-alias r4low=' mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_radio_fourfm.m3u8 ' # 44.6 kbps stream
-alias r4='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_radio_fourfm.m3u8 ' # UK only perhaps? 130 kbps stream
+alias r4low=' mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_radio_fourfm.m3u8 ' 
+alias r4='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_radio_fourfm.m3u8 ' 
+alias r3low=' mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_radio_three.m3u8 ' 
+alias r3='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_radio_three.m3u8 ' 
 
 alias datestamp='rename "s/^/`date +%Y-%m-%d`-JarvistMooreFrost-/" '
 
@@ -141,28 +146,31 @@ fi
 # PLATFORM specific stuff
 
 # Detect the platform.
-case "$OSTYPE" in
-darwin*) # Mac (OSX)
-#echo "Hipster mode (OSX) enabled..."
-# Abuse Apple's open command; so you can use 'program file' sensible in terminal
-alias vesta='open -a Vesta '
-alias ase="source ~/Virtualenvs/python-ase-3.8.1.3440/bin/activate"
+case "$OSTYPE" 
+in darwin*) # Mac (OSX)
+    #echo "Hipster mode (OSX) enabled..."
+    # Abuse Apple's open command; so you can use 'program file' sensible in terminal
+    alias vesta='open -a Vesta '
+    alias ase="source ~/Virtualenvs/python-ase-3.8.1.3440/bin/activate"
 
-PYTHONPATH=/Users/jarvist/REPOSITORY/phonopy/lib/python:/usr/local/lib/python2.7/site-packages
-export PYTHONPATH
+# This was for Phonopy work. Now borks up Anaconda modern matplotlib.
+#PYTHONPATH=/Users/jarvist/REPOSITORY/phonopy/lib/python:/usr/local/lib/python2.7/site-packages
+#export PYTHONPATH
 
+# added by Anaconda2 4.4.0 installer
+    export PATH="/Users/jarvist/anaconda/bin:$PATH"
 ;;
 linux-gnu*) # Debian
 #echo "Debian Linux; woo"
 # Oh god I'm turning into a mac head; these enables you to 'open File' and it'll do a Mime-esque guess
-alias open='xdg-open'
+    alias open='xdg-open'
 # These use the pleasantly simple https://github.com/jonls/redshift/ to change colour temperature
-alias redshiftnow='redshift -l 51:0 -o ' #Hardcoded to London; this is where it's at.
-alias redshiftnight='redshift -O 3700'
-alias blueshift='redshift -O 5600' #I'm good with daylight
+    alias redshiftnow='redshift -l 51:0 -o ' #Hardcoded to London; this is where it's at.
+    alias redshiftnight='redshift -O 3700'
+    alias blueshift='redshift -O 5600' #I'm good with daylight
 
-alias bright='xbacklight -time 0 -set 100'
-alias dim='xbacklight -time 0 -set 10'
+    alias bright='xbacklight -time 0 -set 100'
+    alias dim='xbacklight -time 0 -set 10'
 ;;
 esac
 
@@ -192,4 +200,6 @@ echo "Last minute at IC: " `expr $diff / 86400`  days  `expr \( $diff % 86400 \)
 
 ;;
 esac
+
+
 

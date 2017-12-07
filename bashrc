@@ -183,7 +183,13 @@ echo "Really Married in: " `expr $diff / 86400`  days  `expr \( $diff % 86400 \)
 theend=` date --date "11 July 2017 20:20" +%s `
 now=` date  +%s `
 diff=` expr $now - $theend  `
-echo "Last struck by lighting" `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds ago.
+echo "Last struck by lightning" `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds ago.
+
+theend=` date --date "9 Feb 2018 17:30" +%s `
+now=` date  +%s `
+diff=` expr $theend - $now  `
+echo "Last minute at IC: " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
+
 ;;
 esac
 

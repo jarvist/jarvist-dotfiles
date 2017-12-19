@@ -13,7 +13,9 @@ set nocompatible
 
 " F7 to toggle spell-checking
 map <silent> <F7> :set nospell!<CR>:set nospell?<CR>
-"
+" F8 for Julia esque unicode \epsilon<tab> completion
+noremap <expr> <F8> LaTeXtoUnicode#Toggle()
+inoremap <expr> <F8> LaTeXtoUnicode#Toggle()
 " " F6 for paste toggle with a status display
 " Moved to F6 as on my Mac F1-F4 all do stuff
 nnoremap <F6> :set invpaste paste?<CR>
@@ -135,3 +137,4 @@ au BufNewFile,BufReadPost *.md                     set ft=markdown "as above...
 highlight Normal ctermbg=none 
 " disable highlighting --> transparency correct on tmux etc.
 highlight NonText ctermbg=none
+

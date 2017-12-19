@@ -227,7 +227,7 @@ TaskBarShowAPMStatus=1 # 0/1
 TaskBarShowAPMTime=1 # 0/1
 
 #  Show mailbox status on task bar
-# TaskBarShowMailboxStatus=1 # 0/1
+TaskBarShowMailboxStatus=0 # 0/1
 
 #  Beep when new mail arrives
 # TaskBarMailboxStatusBeepOnNewMail=0 # 0/1

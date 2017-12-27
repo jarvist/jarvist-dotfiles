@@ -27,3 +27,15 @@ do
     echo "Intel chipset $dir auto power control..."
      echo 'auto' > "${dir}/power/control"
 done
+
+echo "OK! Tried to save power."
+
+echo "Setting 80% battery charge limit..."
+
+sudo modprobe tp_smapi
+echo 40 | sudo tee /sys/devices/platform/smapi/BAT0/start_charge_thresh
+echo 80 | sudo tee /sys/devices/platform/smapi/BAT0/stop_charge_thresh
+
+cat /sys/devices/platform/smapi/BAT0/start_charge_thresh
+cat /sys/devices/platform/smapi/BAT0/stop_charge_thresh
+

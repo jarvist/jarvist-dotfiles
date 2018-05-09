@@ -566,13 +566,13 @@ NetworkStatusDevice="wlan0" # eth0"
 # AcpiIgnoreBatteries=""
 
 #  Mouse binding for window move
-# MouseWinMove="Alt+Pointer_Button1"
+MouseWinMove="Ctrl+Alt+Pointer_Button1"
 
 #  Mouse binding for window resize
-# MouseWinSize="Alt+Pointer_Button3"
+MouseWinSize="Ctrl+Alt+Pointer_Button3"
 
 #  Mouse binding to raise window
-# MouseWinRaise="Ctrl+Alt+Pointer_Button1"
+MouseWinRaise="Ctrl+Alt+Pointer_Button1"
 
 #  
 # KeyWinRaise="Alt+F1"

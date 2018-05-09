@@ -20,3 +20,5 @@
 	default = simple
 [core]
 	editor = vim
+[github]
+	user = jarvist

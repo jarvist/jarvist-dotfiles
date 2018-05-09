@@ -15,6 +15,11 @@ key "Alt+Ctrl+u"    urxvt -fn terminus-20 -fb terminus-bold-20 -fg white -bg bla
 key "Alt+Ctrl+KP_Divide"	aumix -v -5		# lower volume
 key "Alt+Ctrl+KP_Multiply"	aumix -v +5		# raise volume
 
+# Mac like 'selection + copy to clipboard'; 
+# I often use this when putting talks together, to select figures + output
+# from PDFs / visualisers
+key "Alt+Shift+3"    scrot -s -e 'xclip -selection clipboard -t "image/png" < $f'
+
 # "Multimedia key" bindings for XFree86. Gather the keycodes of your
 # advanced function keys by watching the output of the xev command whilest
 # pressing those keys and map those symbols by using xmodmap.

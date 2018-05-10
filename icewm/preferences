@@ -11,7 +11,9 @@
 # FocusOnAppRaise=0 # 0/1
 
 #  Request focus (flashing in taskbar) when application requests raise
-# RequestFocusOnAppRaise=1 # 0/1
+RequestFocusOnAppRaise=0 # 0/1
+# Jarv - turn off that flashing in the taskbar! URXVT is always asking for
+# it...
 
 #  Raise windows when focused
 # RaiseOnFocus=1 # 0/1
@@ -548,7 +550,7 @@ ShutdownCommand="sudo /sbin/shutdown -h now"
 # AddressBarCommand=""
 
 #  Network device to show status for
-NetworkStatusDevice="wlan0" # eth0"
+NetworkStatusDevice="enp0s25" # KCL ethernet "wlan0" # eth0"
 
 #  Clock Time format (strftime format string)
 # TimeFormat="%X"
@@ -566,10 +568,10 @@ NetworkStatusDevice="wlan0" # eth0"
 # AcpiIgnoreBatteries=""
 
 #  Mouse binding for window move
-MouseWinMove="Ctrl+Alt+Pointer_Button1"
+MouseWinMove="Alt+Pointer_Button1"
 
 #  Mouse binding for window resize
-MouseWinSize="Ctrl+Alt+Pointer_Button3"
+MouseWinSize="Alt+Pointer_Button3"
 
 #  Mouse binding to raise window
 MouseWinRaise="Ctrl+Alt+Pointer_Button1"

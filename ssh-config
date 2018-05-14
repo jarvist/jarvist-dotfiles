@@ -245,3 +245,46 @@ Host pi raspberry
 Host thomas young
     User mmm0096
     HostName thomas.rc.ucl.ac.uk
+
+#  _  ______ _     
+# | |/ / ___| |    
+# | ' / |   | |    
+# | . \ |___| |___ 
+# |_|\_\____|_____|
+
+Host bastion
+    HostName bastion.nms.kcl.ac.uk
+    User k1774377
+
+Host opal tony # graphics
+    HostName 137.73.5.17
+    Port 51515
+
+Host crn dimitar # graphics
+    HostName 137.73.5.40
+
+Host char lefteri #graphics
+    HostName 10.101.17.41
+
+Host soot  # graphics
+    HostName 10.101.17.43
+
+Host coke luke
+    HostName 10.101.17.44
+
+Host byal ivo # graphics
+    HostName 10.101.17.96
+
+Host gherkin 
+    HostName 10.101.17.99
+
+Host coal guy
+    HostName 10.101.17.100
+
+Host beryl  # graphics
+    HostName 10.101.17.127
+
+Host tar 
+    HostName 10.101.17.152
+
+

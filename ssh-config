@@ -256,6 +256,9 @@ Host bastion
     HostName bastion.nms.kcl.ac.uk
     User k1774377
 
+Host lyra # Jarv's
+    HostName 137.73.113.232
+
 Host opal tony # graphics
     HostName 137.73.5.17
     Port 51515

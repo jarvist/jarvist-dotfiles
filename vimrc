@@ -26,6 +26,21 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
+" VIMUX: vi/tmux interaction
+" See: https://blog.bugsnag.com/tmux-and-vim/ for inspiritation / origin.
+" Remap Control-hjkl to Control-W Control-hjkl for split plane navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+" Prompt for a command to run
+map <Leader>vp :VimuxPromptCommand<CR>
+" Run last command executed by VimuxRunCommand
+map <Leader>vl :VimuxRunLastCommand<CR>
+" Zoom the tmux runner pane
+map <Leader>vz :VimuxZoomRunner<CR>
+
+
 "Wraping
 set wrap
 set textwidth=79

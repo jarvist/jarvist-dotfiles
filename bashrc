@@ -164,13 +164,18 @@ linux-gnu*) # Debian
 #echo "Debian Linux; woo"
 # Oh god I'm turning into a mac head; these enables you to 'open File' and it'll do a Mime-esque guess
     alias open='xdg-open'
+    
+    xrdb ~/.XResources # icewm itself doesn't seem to load this. mainly urxvt defaults.
+    
 # These use the pleasantly simple https://github.com/jonls/redshift/ to change colour temperature
     alias redshiftnow='redshift -l 51:0 -o ' #Hardcoded to London; this is where it's at.
-    alias redshiftnight='redshift -O 3700'
-    alias blueshift='redshift -O 5600' #I'm good with daylight
-
+# nice limits for brightness
     alias bright='xbacklight -time 0 -set 100'
     alias dim='xbacklight -time 0 -set 10'
+# colour temperature + brightness in one alias
+    alias night='redshift -O 3500 && dim'
+    alias mars='redshift -O 3500 -g 1:0.1:0.1 && dim' # The rust planet. Blue and Green are gone.
+    alias day='redshift -O 5600 && bright ' #I'm good with daylight
 ;;
 esac
 
@@ -196,7 +201,7 @@ echo "Last struck by lightning" `expr $diff / 86400`  days  `expr \( $diff % 864
 theend=` date --date "9 Feb 2018 17:30" +%s `
 now=` date  +%s `
 diff=` expr $theend - $now  `
-echo "Last minute at IC: " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
+#echo "Last minute at IC: " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
 
 ;;
 esac

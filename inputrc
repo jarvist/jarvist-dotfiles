@@ -1,4 +1,6 @@
-set editing-mode vi
+set editing-mode emacs 
+# emacs better for command line
+
 $if mode=vi
 set keymap vi-command
 "gg": beginning-of-history

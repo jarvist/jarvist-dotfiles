@@ -481,7 +481,8 @@ PagerShowPreview=1 # 0/1
 # FocusRequestFlashTime=0 # [0-86400]
 
 #  Taskbar blink interval (ms) when requesting focus (0 = blinking disabled)
-# FocusRequestFlashInterval=250 # [0-30000]
+FocusRequestFlashInterval=0 # [0-30000]
+# Turn off taskbar flashing!
 
 #  Minimal number of themes after which the Themes menu becomes nested (0=disabled)
 # NestedThemeMenuMinNumber=15 # [0-1234]

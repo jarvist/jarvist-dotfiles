@@ -16,6 +16,9 @@ key "Alt+Ctrl+y"    urxvt -fn terminus-28 -fb terminus-bold-28 -fg white -bg bla
 key "Alt+Ctrl+KP_Divide"	aumix -v -5		# lower volume
 key "Alt+Ctrl+KP_Multiply"	aumix -v +5		# raise volume
 
+key "Alt+Ctrl+l"    slock # lock screen
+key "AltGr+Ctrl+l"    slock # one-handed (right hand) lock screen
+
 # Mac like 'selection + copy to clipboard'; 
 # I often use this when putting talks together, to select figures + output
 # from PDFs / visualisers

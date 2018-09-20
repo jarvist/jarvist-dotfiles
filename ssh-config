@@ -50,6 +50,13 @@ Host hpc cx2
     HostName login.cx2.hpc.ic.ac.uk
     User jmf02
 
+Host cx1-tunnel
+    User jmf02
+    HostName login.cx1.hpc.ic.ac.uk
+    PreferredAuthentications publickey
+    # local install of nc to allow bounce to cx1
+    ProxyCommand ssh sshgw '~/nc' %h %p
+
 Host union
     HostName union.ic.ac.uk
     User jmf02
@@ -256,8 +263,9 @@ Host bastion
     HostName bastion.nms.kcl.ac.uk
     User k1774377
 
-Host lyra # Jarv's
-    HostName 137.73.113.232
+Host lyra jarv # Jarv's
+    HostName 10.101.17.92
+    #HostName 137.73.113.232
 
 Host opal tony # graphics
     HostName 137.73.5.17

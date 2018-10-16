@@ -1,6 +1,12 @@
 set editing-mode emacs 
 # emacs better for command line
 
+# rxvt for Model M keyboard at work
+"\e[7~": beginning-of-line
+"\e[8~": end-of-line
+"\eOc": forward-word
+"\eOd": backward-word
+
 $if mode=vi
 set keymap vi-command
 "gg": beginning-of-history

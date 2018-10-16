@@ -28,8 +28,16 @@ urxvt*letterSpace:	-1
 urxvt*termName:		xterm
 urxvt*urgentOnBell:	True
 
+! 
+
 ! TABS
 URxvt.perl-ext-common: ...,tabbed,...
+! NB: this is modified to refuse to delete windows (avoid alt-f4 multi-tab horror)
+! https://urxvt.wordpress.com/2015/05/12/commenting-out-one-line-in-the-tabbedex-extension-can-keep-your-urxvt-windows-from-closing-accidentally/
+
+! Fix KERNING
+URxvt*letterSpace: 0
+! See: https://urxvt.wordpress.com/2015/05/12/a-simple-workaround-for-the-urxvt-kerning-letter-spacing-bug/
 
 XTerm*visualBell:  False 
 ! causes screen tearing (no composing X-windows manager)

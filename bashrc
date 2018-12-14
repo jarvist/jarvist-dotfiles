@@ -188,20 +188,27 @@ tmux list-sessions 2> /dev/null # list tmux sessions, don't show anything if non
 case "$OSTYPE" in
 linux*) # Mac (OSX)
 # Countdown to next end of PDRA contract / life event
-theend=` date --date "23 July 2016 13:30" +%s `
-now=` date  +%s `
-diff=` expr $theend - $now `
-echo "Really Married in: " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
+#theend=` date --date "23 July 2016 13:30" +%s `
+#now=` date  +%s `
+#diff=` expr $theend - $now `
+#echo "Really Married in: " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
 
 theend=` date --date "11 July 2017 20:20" +%s `
 now=` date  +%s `
 diff=` expr $now - $theend  `
-echo "Last struck by lightning" `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds ago.
+echo "Last struck by lightning:  " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds ago.
 
-theend=` date --date "9 Feb 2018 17:30" +%s `
+theend=` date --date "31 Dec 2018 23:58" +%s `
 now=` date  +%s `
 diff=` expr $theend - $now  `
-#echo "Last minute at IC: " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
+echo "Last minute in the academy:  " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
+
+theend=` date --date "14 Nov 2018 10:41" +%s `
+now=` date  +%s `
+diff=` expr $now - $theend  `
+echo "Tean is:  " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
+
+
 
 ;;
 esac

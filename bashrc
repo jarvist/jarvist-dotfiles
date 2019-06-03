@@ -6,7 +6,9 @@
 [ -z "$PS1" ] && return
 
 #Kick vim to give full colour, please. This might cause bad things to happen if logging in with some ancient terminal emulator.
-export TERM=xterm-256color
+#export TERM=xterM-UNicode-256color # xterm-256color
+# made obsolete by putting term correct in Xdefaults
+#unset TERM
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -24,6 +26,10 @@ set -o vi
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+
+#so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
+#  Nb: now that I use VS code, I switch to vim, Ctrl-S, and hang the terminal :^)
+stty -ixon
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -65,6 +71,9 @@ alias whiteboard=whiteboardme
 # Weather via wttr.in service to Wego command line app (unicode terminal only!)
 alias weatherbath='curl http://wttr.in/bath '
 alias weatherlondon='curl http://wttr.in/london '
+alias weathernoc='curl http://wttr.in/noc '
+alias weathermayo=weathernoc
+alias weather=weatherlondon
 
 # Check / Close SSH Master Connections (when X-forwarding suddenly breaks; laptop wakes up with stale WiFi / connections)
 alias ssh-MasterConnection-exit="ssh -O exit "
@@ -123,13 +132,6 @@ fi
 if [ -d ~/hpc-bin ] ; then
  PATH=~/hpc-bin:"${PATH}"
 fi
-if [ -d ~/Library/Python/2.7/bin/  ] ; then
-    PATH="${PATH}":~/Library/Python/2.7/bin/
-fi
-# MacTeX on modern Mac
-if [ -d /Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin/ ] ; then
-    PATH="${PATH}":/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin/
-fi
 export PATH
 
 # enable programmable completion features (you don't need to enable
@@ -152,13 +154,6 @@ in darwin*) # Mac (OSX)
     # Abuse Apple's open command; so you can use 'program file' sensible in terminal
     alias vesta='open -a Vesta '
     alias ase="source ~/Virtualenvs/python-ase-3.8.1.3440/bin/activate"
-
-# This was for Phonopy work. Now borks up Anaconda modern matplotlib.
-#PYTHONPATH=/Users/jarvist/REPOSITORY/phonopy/lib/python:/usr/local/lib/python2.7/site-packages
-#export PYTHONPATH
-
-# added by Anaconda2 4.4.0 installer
-    export PATH="/Users/jarvist/anaconda/bin:$PATH"
 ;;
 linux-gnu*) # Debian
 #echo "Debian Linux; woo"
@@ -169,7 +164,7 @@ linux-gnu*) # Debian
     
 # These use the pleasantly simple https://github.com/jonls/redshift/ to change colour temperature
     alias redshiftnow='redshift -l 51:0 -o ' #Hardcoded to London; this is where it's at.
-# nice limits for brightness
+# nice limits for brightness; works with my Thinkpad X220
     alias bright='xbacklight -time 0 -set 100'
     alias dim='xbacklight -time 0 -set 10'
 # colour temperature + brightness in one alias
@@ -179,9 +174,25 @@ linux-gnu*) # Debian
 ;;
 esac
 
+if [ "$HOSTNAME" == "hodgkin" ]
+then
+    xmodmap ~/.xmodmap 
+    # Curent just a remap for /? key + AltGr to give me \| 
+    #   (Model M keyboard; PS/2 adapter generates no keycodes from physically pressing down this key!!!)
+    #> cat .xmodmap 
+    #keycode 61 = slash question backslash bar backslash bar
+
+    source ~/GTN.sh # Top secret work defaults
+fi
+
+# turn on auto-jump. Use 'j' to jump!
+source /usr/share/autojump/autojump.sh
+
+
+# Message of the day
+
 # See: https://en.wikipedia.org/wiki/WarGames ; Child of the 80s
 echo -e "${bold}     GREETINGS PROFESSOR FALKEN.  SHALL WE PLAY A GAME?${normal}"
-
 tmux list-sessions 2> /dev/null # list tmux sessions, don't show anything if none...
 
 # Only on Linux currently! should rewrite this...
@@ -198,20 +209,18 @@ now=` date  +%s `
 diff=` expr $now - $theend  `
 echo "Last struck by lightning:  " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds ago.
 
-theend=` date --date "31 Dec 2018 23:58" +%s `
-now=` date  +%s `
-diff=` expr $theend - $now  `
-echo "Last minute in the academy:  " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
+#theend=` date --date "31 Dec 2018 23:58" +%s `
+#now=` date  +%s `
+#diff=` expr $theend - $now  `
+#echo "Last minute in the academy:  " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
 
 theend=` date --date "14 Nov 2018 10:41" +%s `
 now=` date  +%s `
 diff=` expr $now - $theend  `
-echo "Tean is:  " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
-
+echo "Tean is:  " `expr $diff / 604800` weeks `expr \( $diff % 604800 \) / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds old.
 
 
 ;;
 esac
-
 
 

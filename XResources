@@ -25,7 +25,8 @@ urxvt*color15:     #ffffff
 
 urxvt*font:             -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 urxvt*letterSpace:	-1
-urxvt*termName:		xterm
+urxvt*termName:	    xterm-256color	
+
 urxvt*urgentOnBell:	True
 
 ! 

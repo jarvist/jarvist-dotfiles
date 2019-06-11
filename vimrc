@@ -22,6 +22,9 @@ nnoremap <F6> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
+" F5 for gundo (undo tree description)
+nnoremap <F5> :GundoToggle<CR>
+
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>

@@ -44,6 +44,9 @@ normal=`tput sgr0`
 # >
 PS1="\[${TITLEBAR}${bold}\][\D{%a%d%b-%R}]\u@\h:\w/ \n> \[${normal}\]"
 
+# Archive history line by line to own per-day file
+PROMPT_COMMAND=' echo "$(date "+%Y-%m-%d.%H:%M:%S")${USER}@${HOSTNAME}:$(pwd) $(history 1)" >> ~/.logs/$(date "+%Y-%m-%d")-${HOSTNAME}-bash.log '
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -173,11 +176,15 @@ linux-gnu*) # Debian
     alias bright='xbacklight -time 0 -set 100'
     alias dim='xbacklight -time 0 -set 10'
 # colour temperature + brightness in one alias
-    alias night='redshift -O 3500 && dim'
+    alias night='redshift -O 2700 && dim'
     alias mars='redshift -O 3500 -g 1:0.1:0.1 && dim' # The rust planet. Blue and Green are gone.
     alias day='redshift -O 5600 && bright ' #I'm good with daylight
 ;;
 esac
+
+# activate autojump: https://github.com/wting/autojump
+. /usr/share/autojump/autojump.sh
+
 
 # See: https://en.wikipedia.org/wiki/WarGames ; Child of the 80s
 echo -e "${bold}     GREETINGS PROFESSOR FALKEN.  SHALL WE PLAY A GAME?${normal}"
@@ -198,10 +205,10 @@ now=` date  +%s `
 diff=` expr $now - $theend  `
 echo "Last struck by lightning:  " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds ago.
 
-theend=` date --date "31 Dec 2018 23:58" +%s `
-now=` date  +%s `
-diff=` expr $theend - $now  `
-echo "Last minute in the academy:  " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
+#theend=` date --date "31 Dec 2018 23:58" +%s `
+#now=` date  +%s `
+#diff=` expr $theend - $now  `
+#echo "Last minute in the academy:  " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
 
 theend=` date --date "14 Nov 2018 10:41" +%s `
 now=` date  +%s `

@@ -11,16 +11,21 @@ set vb
 
 set nocompatible
 
-" F7 to toggle spell-checking
-map <silent> <F7> :set nospell!<CR>:set nospell?<CR>
 " F8 for Julia esque unicode \epsilon<tab> completion
 noremap <expr> <F8> LaTeXtoUnicode#Toggle()
 inoremap <expr> <F8> LaTeXtoUnicode#Toggle()
+" F7 to toggle spell-checking
+map <silent> <F7> :set nospell!<CR>:set nospell?<CR>
 " " F6 for paste toggle with a status display
 " Moved to F6 as on my Mac F1-F4 all do stuff
 nnoremap <F6> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
+" F5 for Gundo (undo tree visualisation + navigation)
+nnoremap <F5> :GundoToggle<CR>
+" Fix Gundo to use Python 3
+"   [ Alas, this still blows up if used under a Conda environment. ]
+let g:gundo_prefer_python3 = 1
 
 " F5 for gundo (undo tree description)
 nnoremap <F5> :GundoToggle<CR>
@@ -50,7 +55,7 @@ set textwidth=79
 set formatoptions=qrn1
 ""set colorcolumn=85
 
-"Numbers, always, but relative please.
+"Line Numbers, always, but relative please.
 set number
 set relativenumber
 
@@ -108,11 +113,6 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
-set wrap
-set textwidth=79
-set formatoptions=qrn1
-"set colorcolumn=85
-
 "keeps location in long broken lines
 nnoremap j gj
 nnoremap k gk
@@ -137,22 +137,37 @@ if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-" Set Colours determined by whether running gvim or not
-if has('gui_running')
-    set background=dark
-    colorscheme solarized
-else
-    set background=dark
-    let g:zenburn_high_Contrast=1
-    let g:zenburn_transparent = 1 " makes terminal background black
-    colors zenburn
-endif
+"" Set colourscheme 
+" if has('gui_running')
+"    set background=dark
+"    colorscheme solarized
+"else
+"    set background=dark
+"    let g:zenburn_high_Contrast=1
+"    let g:zenburn_transparent = 1 " makes terminal background black
+"    colors zenburn
+"endif
 
-au BufNewFile,BufReadPost *.gin,*.gout,*.got        set ft=gin  "Shouldn't need this, but getting overridden
+colors delek "nice scheme, distributed with vim
+
+au BufNewFile,BufReadPost *.gin,*.gout,*.got       set ft=gin  "Shouldn't need this, but getting overridden
 au BufNewFile,BufReadPost *.md                     set ft=markdown "as above...
+
+" Async Linting
+" But actually, I don't want it to run 'live'
+let g:ale_lint_on_text_changed = 'never'
+" Nor when I open a file...
+let g:ale_lint_on_enter = 0
+" So it only runs automatically when I save, which is when I want to consider
+" linting.
 
 " See: http://stackoverflow.com/questions/21572179/vim-color-scheme-overriding-the-background-settings-in-gnome-terminal
 highlight Normal ctermbg=none 
 " disable highlighting --> transparency correct on tmux etc.
 highlight NonText ctermbg=none
+
+" override silly underline highlight line (current editor line)
+hi CursorLine cterm=NONE ctermbg=black ctermfg=white
+" turn off the weird underline bar
+set cursorline!
 

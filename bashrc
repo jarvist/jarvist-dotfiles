@@ -100,14 +100,22 @@ alias soma-missioncontrol='mplayer -playlist http://somafm.com/missioncontrol64.
 # BBC: What else do you need other than R4 and R6?  :)
 # Latest working playlists from: https://gist.github.com/noodlebug/0e5e3754f4e8dbf608e72431b9c34484
 # Fiddled with URLS until I got High Res streams (within UK), 2017-06-07
-# Low res ~ 44.6 kbps
-# High res ~ 130 kbps
+# Low res ~ 44.6 kbps - AVAILABLE INTERNATIONALLY
+# Med res ~ 130 kbps
+# High res ~ 320 kbps - COOKING ON GAS
 alias r6low='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_6music.m3u8 '
-alias r6='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_6music.m3u8 '
+alias r6med='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_6music.m3u8 '
+alias r6='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_6music.m3u8 '
+
 alias r4low=' mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_radio_fourfm.m3u8 ' 
-alias r4='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_radio_fourfm.m3u8 ' 
+alias r4med='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_radio_fourfm.m3u8 ' 
+alias r4='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_fourfm.m3u8 ' 
+
 alias r3low=' mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_radio_three.m3u8 ' 
-alias r3='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_radio_three.m3u8 ' 
+alias r3med='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_radio_three.m3u8 ' 
+alias r3='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_three.m3u8 ' 
+
+alias worldservice='mplayer -playlist "http://bbcwssc.ic.llnwd.net/stream/bbcwssc_mp1_ws-eieuk" ' # lo-fi alas, 56 kbps
 
 alias datestamp='rename "s/^/`date +%Y-%m-%d`-JarvistMooreFrost-/" '
 

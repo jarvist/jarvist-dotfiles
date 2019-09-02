@@ -171,3 +171,6 @@ hi CursorLine cterm=NONE ctermbg=black ctermfg=white
 " turn off the weird underline bar
 set cursorline!
 
+" vulnerability in modelines, 2019-06-04
+set modelines=0
+set nomodeline

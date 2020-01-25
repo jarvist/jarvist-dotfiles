@@ -32,10 +32,17 @@ echo "OK! Tried to save power."
 
 echo "Setting 80% battery charge limit..."
 
-sudo modprobe tp_smapi
-echo 40 | sudo tee /sys/devices/platform/smapi/BAT0/start_charge_thresh
-echo 80 | sudo tee /sys/devices/platform/smapi/BAT0/stop_charge_thresh
+# better to use tlp, than set this by hand
+#sudo modprobe tp_smapi
+#echo 40 | sudo tee /sys/devices/platform/smapi/BAT0/start_charge_thresh
+#echo 80 | sudo tee /sys/devices/platform/smapi/BAT0/stop_charge_thresh
+
+sudo tlp setcharge 50 80 BAT0
 
 cat /sys/devices/platform/smapi/BAT0/start_charge_thresh
 cat /sys/devices/platform/smapi/BAT0/stop_charge_thresh
 
+# catch all powertop autotune
+#  I think this might turn on power saving audio codec = irritating clicking,
+#  and usb mouse transciever = irritating lag in mouse
+sudo powertop --auto-tune

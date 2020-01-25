@@ -10,7 +10,9 @@
 # XF86. Valid modifiers are Alt, Ctrl, Shift, Meta, Super and Hyper.
 #
 key "Alt+Ctrl+t"	mrxvt -fn terminus-16 -fb terminus-bold-16 -fg white -bg black -bt -g 310x85 -sl 65535
+
 key "Alt+Ctrl+u"    urxvt -fn terminus-20 -fb terminus-bold-20 -fg white -bg black -g 310x86 -sl 65535
+key "Alt+Ctrl+b"    urxvt -fn terminus-20 -fb terminus-bold-20 -fg white -bg '#000080' -g 310x86 -sl 65535
 key "Alt+Ctrl+y"    urxvt -fn terminus-28 -fb terminus-bold-28 -fg white -bg black -g 310x85 -sl 65535
 
 key "Alt+Ctrl+KP_Divide"	aumix -v -5		# lower volume
@@ -32,8 +34,11 @@ key "Alt+Ctrl+s"    scrot -s -e 'xclip -selection clipboard -t "image/png" < $f'
 
 key "XF86Standby"		killall -QUIT icewm
 # Update for 2016 on Asriel ; Modern Alsamixer
-key "XF86AudioLowerVolume"  amixer -c 0 sset Master 4dB-	
-key "XF86AudioRaiseVolume"	amixer -c 0 sset Master 4dB+
+#key "XF86AudioLowerVolume"  amixer -c 0 sset Master 4dB-
+#key "XF86AudioRaiseVolume"	amixer -c 0 sset Master 4dB+ 
+key "XF86AudioLowerVolume" pactl set-sink-volume 1 '-4dB'	
+key "XF86AudioRaiseVolume" pactl set-sink-volume 1 '+4dB'	
+# amixer catches the internal ALSA audio on the X220; pactl goes to PulseAudio #1, the DAC
 key "XF86AudioMute"		aumix -v 0
 key "XF86Eject"			eject
 

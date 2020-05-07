@@ -53,6 +53,10 @@ PS1="\[${TITLEBAR}${bold}\][\D{%a%d%b-%R}]\u@\h:\w/ \n> \[${normal}\]"
 # Archive history line by line to own per-day file
 PROMPT_COMMAND=' echo "$(date "+%Y-%m-%d.%H:%M:%S")${USER}@${HOSTNAME}:$(pwd) $(history 1)" >> ~/.logs/$(date "+%Y-%m-%d")-${HOSTNAME}-bash.log '
 
+# https://news.ycombinator.com/item?id=19762190
+# The tl;dr here is that "ls" can be much faster if you disable colorizing files based on the their file capabilities, setuid/setgid bits, or executable flag.
+LS_COLORS='ex=00:su=00:sg=00:ca=00:'
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -151,6 +155,10 @@ export PATH
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+# Homebrew 'brew install bash-completion' on Mac
+if [ -f /usr/local/etc/profile.d/bash_completion.sh ] && ! shopt -oq posix; then
+    . "/usr/local/etc/profile.d/bash_completion.sh"
+fi
 
 if [ -n "$DISPLAY" ]; then
     xset b off
@@ -206,17 +214,15 @@ source /usr/share/autojump/autojump.sh
 echo -e "${bold}     GREETINGS PROFESSOR FALKEN.  SHALL WE PLAY A GAME?${normal}"
 tmux list-sessions 2> /dev/null # list tmux sessions, don't show anything if none...
 
-# Only on Linux currently! should rewrite this...
-case "$OSTYPE" in
-linux*) # Mac (OSX)
 # Countdown to next end of PDRA contract / life event
+now=` date  +%s `
+
 #theend=` date --date "23 July 2016 13:30" +%s `
 #now=` date  +%s `
 #diff=` expr $theend - $now `
 #echo "Really Married in: " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
 
-theend=` date --date "11 July 2017 20:20" +%s `
-now=` date  +%s `
+theend=1499800800 # ` date --date "11 July 2017 20:20" +%s ` # precomputed for mac
 diff=` expr $now - $theend  `
 echo "Last struck by lightning:  " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds ago.
 
@@ -225,13 +231,27 @@ echo "Last struck by lightning:  " `expr $diff / 86400`  days  `expr \( $diff % 
 #diff=` expr $theend - $now  `
 #echo "Last minute in the academy:  " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
 
-theend=` date --date "14 Nov 2018 10:41" +%s `
-now=` date  +%s `
+theend=1542192060 # ` date --date "14 Nov 2018 10:41" +%s ` # precomputed for Mac :^)
 diff=` expr $now - $theend  `
 echo "Tean is:  " `expr $diff / 604800` weeks `expr \( $diff % 604800 \) / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds old.
 
+lockdown=1584489540 # date --date "17 March 2020 23:59" +%s
+diff=` expr $now - $lockdown`
+echo "Lockdown for:  " `expr $diff / 604800` weeks `expr \( $diff % 604800 \) / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
 
-;;
-esac
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/jarvist/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/jarvist/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/jarvist/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/jarvist/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 

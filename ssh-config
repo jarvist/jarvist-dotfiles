@@ -28,6 +28,11 @@ Host *
 # Up to 5 pings with no reply before hang up
     ServerAliveInterval 30 
 # Seconds. Needs to be <60s for some home routers
+# Don't offer all keys you can find... protects against compromised host
+# somewhat.
+    IdentitiesOnly yes
+# don't bounce keys through the service
+    ForwardAgent no
 
 # Enable Master Sessions - (for scp autocomplete + not hammering HPC facilities)
 # See: http://unix.stackexchange.com/questions/32984/multiple-ssh-sessions-in-single-command/33012#33012
@@ -42,18 +47,26 @@ ControlPath ~/.ssh/control:%h:%p:%r
 #     | |  | |___
 #    |___|  \____| 
 
+Host *.ic.ac.uk *.imperial.ac.uk
+    User jmf02
+    IdentityFile /home/jarvist/.ssh/id_ed25519 
+# 12th May 2020 ed25519 MacPro
+    PreferredAuthentications publickey
+
 # Imperial hosts - need VPN to be on / inside IC wireless
+Host orac
+    HostName 155.198.204.79
+    User jarvist
 Host hpc cx1
     HostName login.cx1.hpc.ic.ac.uk
     User jmf02
-Host hpc cx2
+Host cx2
     HostName login.cx2.hpc.ic.ac.uk
     User jmf02
 
 Host cx1-tunnel
     User jmf02
     HostName login.cx1.hpc.ic.ac.uk
-    PreferredAuthentications publickey
     # local install of nc to allow bounce to cx1
     ProxyCommand ssh sshgw '~/nc' %h %p
 
@@ -69,6 +82,8 @@ Host sshgw
     User jmf02
 #    ForwardAgent yes
 
+
+# Jarv's Work Mac in RSM; >Sept 2016
 Host gabor # Jarv's work MAC
     Hostname 129.31.136.247
     User jarvist
@@ -78,129 +93,6 @@ Host gabor-tunnel
     User jarvist
     ProxyCommand ssh -W %h:%p sshgw
 # Does not current work, as SSHGW does not allow -W ?
-# Jarv's Work Mac in RSM; >Sept 2016
-
-#     ____     _   _____  _   _
-#    | __ )   / \ |_   _|| | | |
-#    |  _ \  / _ \  | |  | |_| |
-#    | |_) |/ ___ \ | |  |  _  |
-#    |____//_/   \_\|_|  |_| |_|
-
-#Bath general access;
-#https://wiki.bath.ac.uk/display/HPC/Logging+in+from+outside
-
-# These apply to any Bath host
-Host *.bath.ac.uk
-    User jmf45
-#    PreferredAuthentications publickey
-#    IdentityFile /home/jarvist/.ssh/bath_rsa
- 
-# These settings are specific to LCPU
-Host lcpu linux.bath
-    User jmf45
-#    HostName lcpu.bath.ac.uk # retiring July 2017; Long live LCPU!
-    HostName linux.bath.ac.uk 
-#    PreferredAuthentications publickey
-#    IdentityFile /home/jarvist/.ssh/bath_rsa
- 
-# Jarv's desktop at work
-Host potassium workmac
-    User jarvist
-    Hostname chmc-7602.campus.bath.ac.uk
-    ProxyCommand ssh lcpu nc %h %p
-
-# AQUILA - Bath Cluster
-Host aquila
-    User jmf45
-    HostName aquila.bath.ac.uk
-    PreferredAuthentications publickey
-#    IdentityFile /home/jarvist/.ssh/bath_rsa
-#    ProxyCommand ssh lcpu nc %h %p
-
-Host aquila-tunnel
-    User jmf45
-    HostName aquila.bath.ac.uk
-    PreferredAuthentications publickey
-    ProxyCommand ssh lcpu nc %h %p
-
-
-# BALENA - Bath new Cluster (2015)
-Host balena
-    User jmf45 
-    HostName balena.bath.ac.uk
-    PreferredAuthentications publickey
-
-Host balena-tunnel
-    User jmf45 
-    HostName balena.bath.ac.uk
-    PreferredAuthentications publickey
-    ProxyCommand ssh lcpu nc %h %p
-
-# NEON - WMD Group mini cluster ( 12 nodes )
-Host neon chsv-wmd
-    User jarvist
-    HostName chsv-wmd.bath.ac.uk 
-    LocalForward 2000 localhost:80
-# Localforward gives access to Ganglia web monitoring...
-#    LocalForward 2001 138.38.45.74:80 
-
-Host neon-tunnel
-    User jarvist
-    HostName chsv-wmd.bath.ac.uk 
-    ProxyCommand ssh lcpu nc %h %p
-
-# Group machines for general use (not clusters)
-Host chlorine tesla # Linux - :) - Redhat
-    User jarvist
-    Hostname chmc-chlorine.bath.ac.uk
-
-Host chlorine-tunnel tesla-tunnel # Linux
-    User jarvist
-    Hostname chmc-chlorine.bath.ac.uk
-    ProxyCommand ssh lcpu nc %h %p
-
-Host aluminium slave # Headless (?) i7 iMac
-    User compchem
-    Hostname chpc-aw10.bath.ac.uk
-
-# The Dell servers - 2014/2015, all ~24 hyperthread cores, 32-64GB mem
-
-Host titanium #2x6 core Xeon, 64GB mem
-    User jarvist
-    Hostname chpc-titanium.bath.ac.uk
-
-Host titanium-tunnel #2x6 core Xeon, 64GB mem
-    User jarvist
-    Hostname chpc-titanium.bath.ac.uk
-    ProxyCommand ssh lcpu nc %h %p
-
-Host scandium wmd-pv #2x6 core Xeon, 64GB mem
-    User jarvist
-    Hostname chpc-scandium.bath.ac.uk
-
-Host scandium-tunnel wmd-pv-tunnel #2x6 core Xeon, 64GB mem
-    User jarvist
-    Hostname chpc-scandium.bath.ac.uk
-    ProxyCommand ssh lcpu nc %h %p
-
-Host iron  # 2x8 core Xeon (2.4GHz), 32 GB mem
-    User jarvist 
-    Hostname chpc-iron.bath.ac.uk
-
-Host iron-tunnel
-    User jarvist
-    Hostname chpc-iron.bath.ac.uk
-    ProxyCommand ssh lcpu nc %h %p
-
-Host cobalt # 2x8 core (32 HT) E5-2630 @ 2.40GHz; 64GB mem
-    User jarvist
-    Hostname chpc-cobalt.bath.ac.uk
-
-Host cobalt-tunnel
-    User jarvist
-    Hostname chpc-cobalt.bath.ac.uk
-    ProxyCommand ssh lcpu nc %h %p
-
 
 #     _____  ____   ____   ____    ____
 #    | ____||  _ \ / ___| |  _ \  / ___|
@@ -209,10 +101,6 @@ Host cobalt-tunnel
 #    |_____||_|    |____/ |_| \_\ \____|
 
 # EPSRC National facilities
-Host hector
-    User jarvist
-    HostName login.hector.ac.uk
-
 Host archer
     User jarvist
     HostName login.archer.ac.uk
@@ -235,13 +123,6 @@ Host wonder napier iden
     User jmf49-pxs03
     HostName phase2.wonder.hartree.stfc.ac.uk
 
-# Home Net
-
-Host pi raspberry
-    User pi
-    HostName raspberrypi.local
-    # I don't know with what DNS magic this works. But it does.
-
 #  _   _  ____ _
 #  | | | |/ ___| |
 #  | | | | |   | |
@@ -253,49 +134,10 @@ Host thomas young
     User mmm0096
     HostName thomas.rc.ucl.ac.uk
 
-#  _  ______ _     
-# | |/ / ___| |    
-# | ' / |   | |    
-# | . \ |___| |___ 
-# |_|\_\____|_____|
-
-Host bastion
-    HostName bastion.nms.kcl.ac.uk
-    User k1774377
-
-Host lyra jarv # Jarv's
-    HostName 10.101.17.92
-    #HostName 137.73.113.232
-
-Host opal tony # graphics
-    HostName 137.73.5.17
-    Port 51515
-
-Host crn dimitar # graphics
-    HostName 137.73.5.40
-
-Host char lefteri #graphics
-    HostName 10.101.17.41
-
-Host soot  # graphics
-    HostName 10.101.17.43
-
-Host coke luke
-    HostName 10.101.17.44
-
-Host byal ivo # graphics
-    HostName 10.101.17.96
-
-Host gherkin 
-    HostName 10.101.17.99
-
-Host coal guy
-    HostName 10.101.17.100
-
-Host beryl  # graphics
-    HostName 10.101.17.127
-
-Host tar 
-    HostName 10.101.17.152
+# Home Net
+Host pi raspberry
+    User pi
+    HostName raspberrypi.local
+    # I don't know with what DNS magic this works. But it does.
 
 

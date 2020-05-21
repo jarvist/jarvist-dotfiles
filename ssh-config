@@ -49,7 +49,7 @@ ControlPath ~/.ssh/control:%h:%p:%r
 
 Host *.ic.ac.uk *.imperial.ac.uk
     User jmf02
-    IdentityFile /home/jarvist/.ssh/id_ed25519 
+    IdentityFile ~/.ssh/id_ed25519 
 # 12th May 2020 ed25519 MacPro
     PreferredAuthentications publickey
 
@@ -103,6 +103,7 @@ Host gabor-tunnel
 # EPSRC National facilities
 Host archer
     User jarvist
+    IdentityFile ~/.ssh/id_rsa_archer
     HostName login.archer.ac.uk
 
 Host ultrafox fox ultra

@@ -107,19 +107,19 @@ alias soma-missioncontrol='mplayer -playlist http://somafm.com/missioncontrol64.
 # Low res ~ 44.6 kbps - AVAILABLE INTERNATIONALLY
 # Med res ~ 130 kbps
 # High res ~ 320 kbps - COOKING ON GAS
-alias r6low='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_6music.m3u8 '
-alias r6med='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_6music.m3u8 '
-alias r6='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_6music.m3u8 '
+alias r6low='mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_6music.m3u8 '
+alias r6med='mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_6music.m3u8 '
+alias r6='mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_6music.m3u8 '
 
-alias r4low=' mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_radio_fourfm.m3u8 ' 
-alias r4med='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_radio_fourfm.m3u8 ' 
-alias r4='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_fourfm.m3u8 ' 
+alias r4low=' mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_radio_fourfm.m3u8 ' 
+alias r4med='mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_radio_fourfm.m3u8 ' 
+alias r4='mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_fourfm.m3u8 ' 
 
-alias r3low=' mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_radio_three.m3u8 ' 
-alias r3med='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_radio_three.m3u8 ' 
-alias r3='mplayer -playlist http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_three.m3u8 ' 
+alias r3low=' mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_radio_three.m3u8 ' 
+alias r3med='mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_radio_three.m3u8 ' 
+alias r3='mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_three.m3u8 ' 
 
-alias worldservice='mplayer -playlist "http://bbcwssc.ic.llnwd.net/stream/bbcwssc_mp1_ws-eieuk" ' # lo-fi alas, 56 kbps
+alias worldservice='mplayer "http://bbcwssc.ic.llnwd.net/stream/bbcwssc_mp1_ws-eieuk" ' # lo-fi alas, 56 kbps
 
 alias datestamp='rename "s/^/`date +%Y-%m-%d`-JarvistMooreFrost-/" '
 
@@ -239,6 +239,7 @@ lockdown=1584489540 # date --date "17 March 2020 23:59" +%s
 diff=` expr $now - $lockdown`
 echo "Lockdown for:  " `expr $diff / 604800` weeks `expr \( $diff % 604800 \) / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
 
+echo "Week ` date +%V ` of `date +%Y`."
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

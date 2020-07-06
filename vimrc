@@ -148,7 +148,7 @@ endif
 "    colors zenburn
 "endif
 
-colors delek "nice scheme, distributed with vim
+colors elflord "best for blue background terminal, I've found.
 
 au BufNewFile,BufReadPost *.gin,*.gout,*.got       set ft=gin  "Shouldn't need this, but getting overridden
 au BufNewFile,BufReadPost *.md                     set ft=markdown "as above...

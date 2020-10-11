@@ -15,6 +15,8 @@ key "Alt+Ctrl+u"    urxvt -fn terminus-20 -fb terminus-bold-20 -fg white -bg bla
 key "Alt+Ctrl+b"    urxvt -fn terminus-20 -fb terminus-bold-20 -fg white -bg '#000080' -g 310x86 -sl 65535
 key "Alt+Ctrl+y"    urxvt -fn terminus-28 -fb terminus-bold-28 -fg white -bg black -g 310x85 -sl 65535
 
+key "Alt+Ctrl+j"    urxvt -fn "xft:JuliaMono:pixelsize=20" -fg white -bg '#000080' -g 310x85 -sl 65535
+
 key "Alt+Ctrl+KP_Divide"	aumix -v -5		# lower volume
 key "Alt+Ctrl+KP_Multiply"	aumix -v +5		# raise volume
 

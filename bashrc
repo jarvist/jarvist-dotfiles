@@ -48,7 +48,7 @@ normal=`tput sgr0`
 # Looks Like:
 # [Tue24May-12:55]jarvist@chmc-7602:~/
 # >
-PS1="\[${TITLEBAR}${bold}\][\D{%a%d%b-%R}]\u@\h:\w/ \n> \[${normal}\]"
+PS1="\[${TITLEBAR}${bold}\][\D{%a%d%b-%R}]\u@\h:\w/ \n; \[${normal}\]"
 
 # Archive history line by line to own per-day file
 PROMPT_COMMAND=' echo "$(date "+%Y-%m-%d.%H:%M:%S")${USER}@${HOSTNAME}:$(pwd) $(history 1)" >> ~/.logs/$(date "+%Y-%m-%d")-${HOSTNAME}-bash.log '
@@ -128,6 +128,10 @@ alias termcolours='for x in 0 1 4 5 7 8; do for i in `seq 30 37`; do for a in `s
 
 # Bash key bindings
 alias bashbindings="bind -p | grep -v '^#\|self-insert\|^$' "
+
+# such a fan https://mobile.twitter.com/thingskatedid/status/1316074032379248640
+alias icat="kitty icat --align=left"
+alias isvg="rsvg-convert | icat"
 
 # some more ls aliases
 alias ls='ls -Gp' #p to show trailing / on directory/ names
@@ -241,18 +245,5 @@ echo "Lockdown for:  " `expr $diff / 604800` weeks `expr \( $diff % 604800 \) / 
 
 echo "Week ` date +%V ` of `date +%Y`."
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/jarvist/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/jarvist/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/jarvist/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/jarvist/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+export GAUSS_EXEDIR=/home/jarvist/bin/g16.dir/
 

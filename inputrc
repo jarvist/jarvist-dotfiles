@@ -1,4 +1,4 @@
-set editing-mode emacs 
+set editing-mode vi 
 # emacs better for command line
 
 # rxvt for Model M keyboard at work
@@ -8,6 +8,13 @@ set editing-mode emacs
 "\eOd": backward-word
 
 $if mode=vi
+
+# tell me whether command / insert
+set show-mode-in-prompt on
+# and use a different cursor for these modes.
+set vi-ins-mode-string \1\e[6 q\2
+set vi-cmd-mode-string \1\e[2 q\2
+
 set keymap vi-command
 "gg": beginning-of-history
 "G": end-of-history

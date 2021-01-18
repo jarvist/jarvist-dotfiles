@@ -112,6 +112,11 @@ Host archer
     IdentityFile ~/.ssh/id_rsa_archer
     HostName login.archer.ac.uk
 
+Host archer2
+    User jarvist
+    IdentityFile ~/.ssh/id_rsa_archer
+    HostName login.archer2.ac.uk
+
 Host ultrafox fox ultra
     User pr1ujarv
     HostName login.archer.ac.uk

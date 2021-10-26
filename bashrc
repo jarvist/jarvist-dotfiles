@@ -126,6 +126,12 @@ alias datestamp='rename "s/^/`date +%Y-%m-%d`-JarvistMooreFrost-/" '
 # Output full set of 256 termcolours for when I'm playing with colourschemes
 alias termcolours='for x in 0 1 4 5 7 8; do for i in `seq 30 37`; do for a in `seq 40 47`; do echo -ne "\e[$x;$i;$a""m\\\e[$x;$i;$a""m\e[0;37;40m "; done; echo; done; done; echo "";'
 
+# Nice list here: https://jonasjacek.github.io/colors/ - xterm name is the easiest method
+alias backgroundblue="printf '\033]11;navyblue\007'"
+alias backgroundred="printf '\033]11;darkred\007'"
+alias backgroundpurple="printf '\033]11;plum4\007'"
+alias backgroundteal="printf '\033]11;teal\007'"
+
 # Bash key bindings
 alias bashbindings="bind -p | grep -v '^#\|self-insert\|^$' "
 
@@ -248,7 +254,13 @@ lockdown=1584489540 # date --date "17 March 2020 23:59" +%s
 diff=` expr $now - $lockdown`
 echo "Lockdown for:  " `expr $diff / 604800` weeks `expr \( $diff % 604800 \) / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
 
+jab=1622293200 #; date --date "29 May 2021 14:00" +%s
+diff=` expr $now - $jab`
+echo "First vaccine:  " `expr $diff  / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
+
+
+
 echo "Week ` date +%V ` of `date +%Y`."
 
-export GAUSS_EXEDIR=/home/jarvist/bin/g16.dir/
+export GAUSS_EXEDIR=/usr/local/bin/g16.dir/
 

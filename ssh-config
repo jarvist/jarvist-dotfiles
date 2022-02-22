@@ -34,6 +34,7 @@ Host *
 # don't bounce keys through the service
     ForwardAgent no
 
+
 # Enable Master Sessions - (for scp autocomplete + not hammering HPC facilities)
 # See: http://unix.stackexchange.com/questions/32984/multiple-ssh-sessions-in-single-command/33012#33012
 # To create a master: ssh -N -M target-host
@@ -52,6 +53,7 @@ Host *.ic.ac.uk *.imperial.ac.uk
     IdentityFile ~/.ssh/id_ed25519 
 # 12th May 2020 ed25519 MacPro
     PreferredAuthentications publickey
+    ForwardX11 yes
 
 # Imperial hosts - need VPN to be on / inside IC wireless
 Host orac
@@ -63,18 +65,10 @@ Host orac
 Host oracipv6
     Hostname 2a0c:5bc0:40:10cc:86a9:3eff:fe6e:e82f
     User jarvist
-Host hpc cx1
-    HostName login.cx1.hpc.ic.ac.uk
-    User jmf02
-Host cx2
-    HostName login.cx2.hpc.ic.ac.uk
-    User jmf02
 
-Host cx1-tunnel
+Host hpc cx1
+    HostName login.hpc.ic.ac.uk
     User jmf02
-    HostName login.cx1.hpc.ic.ac.uk
-    # local install of nc to allow bounce to cx1
-    ProxyCommand ssh sshgw '~/nc' %h %p
 
 Host union
     HostName union.ic.ac.uk
@@ -86,19 +80,8 @@ Host union
 Host sshgw
     HostName sshgw.ic.ac.uk
     User jmf02
-#    ForwardAgent yes
+#   ForwardAgent yes
 
-
-# Jarv's Work Mac in RSM; >Sept 2016
-Host gabor # Jarv's work MAC
-    Hostname 129.31.136.247
-    User jarvist
-
-Host gabor-tunnel 
-    HostName  129.31.136.247
-    User jarvist
-    ProxyCommand ssh -W %h:%p sshgw
-# Does not current work, as SSHGW does not allow -W ?
 
 #     _____  ____   ____   ____    ____
 #    | ____||  _ \ / ___| |  _ \  / ___|
@@ -117,13 +100,10 @@ Host archer2
     IdentityFile ~/.ssh/id_rsa_archer
     HostName login.archer2.ac.uk
 
-Host ultrafox fox ultra
-    User pr1ujarv
-    HostName login.archer.ac.uk
+Host archer24c
+    User jarvist
+    HostName login-4c.archer2.ac.uk
 
-Host FRISC frisky risky risk risc
-    User pr1ujarl
-    Hostname login.archer.ac.uk
 
 # ____    _    ____  _____ ____  ____  _   _ ______   __
 # |  _ \  / \  |  _ \| ____/ ___|| __ )| | | |  _ \ \ / /

@@ -52,6 +52,8 @@ map <Leader>vz :VimuxZoomRunner<CR>
 "Wraping
 set wrap
 set textwidth=79
+autocmd bufreadpre *.jl setlocal textwidth=92 " blue style guide recommendation
+
 set formatoptions=qrn1
 ""set colorcolumn=85
 
@@ -174,3 +176,6 @@ set cursorline!
 " vulnerability in modelines, 2019-06-04
 set modelines=0
 set nomodeline
+
+" required for julia-vim block-wise navigation
+runtime macros/matchit.vim

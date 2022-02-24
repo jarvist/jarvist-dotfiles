@@ -104,6 +104,8 @@ alias soma-missioncontrol='mplayer -playlist http://somafm.com/missioncontrol64.
 # BBC: What else do you need other than R4 and R6?  :)
 # Latest working playlists from: https://gist.github.com/noodlebug/0e5e3754f4e8dbf608e72431b9c34484
 # Fiddled with URLS until I got High Res streams (within UK), 2017-06-07
+#  Current GitHub GIST with URLS:
+#  https://gist.github.com/bpsib/67089b959e4fa898af69fea59ad74bc3 
 # Low res ~ 44.6 kbps - AVAILABLE INTERNATIONALLY
 # Med res ~ 130 kbps
 # High res ~ 320 kbps - COOKING ON GAS
@@ -119,7 +121,7 @@ alias r3low=' mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simul
 alias r3med='mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_radio_three.m3u8 ' 
 alias r3='mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_three.m3u8 ' 
 
-alias worldservice='mplayer "http://bbcwssc.ic.llnwd.net/stream/bbcwssc_mp1_ws-eieuk" ' # lo-fi alas, 56 kbps
+alias worldservice='mplayer "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_low/ak/bbc_world_service.m3u8" ' # lo-fi alas, 56 kbps, AAC
 
 alias datestamp='rename "s/^/`date +%Y-%m-%d`-JarvistMooreFrost-/" '
 
@@ -236,18 +238,18 @@ theend=1499800800 # ` date --date "11 July 2017 20:20" +%s ` # precomputed for m
 diff=` expr $now - $theend  `
 echo "Last struck by lightning:    " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds ago.
 
-theend=1606452420 #date --date "27 November 2020 04:47" +%s
+theend=1542192060 # ` date --date "14 Nov 2018 10:41" +%s ` # precomputed for Mac :^)
 diff=` expr $now - $theend  `
-echo "Last delivered a baby (Tove):  " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds ago.
+echo "Tean is:  " `expr $diff  / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds old.
 
 #theend=` date --date "31 Dec 2018 23:58" +%s `
 #now=` date  +%s `
 #diff=` expr $theend - $now  `
 #echo "Last minute in the academy:  " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
 
-theend=1542192060 # ` date --date "14 Nov 2018 10:41" +%s ` # precomputed for Mac :^)
+theend=1606452420 #date --date "27 November 2020 04:47" +%s
 diff=` expr $now - $theend  `
-echo "Tean is:  " `expr $diff  / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds old.
+echo "Delivered baby Tove:  " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds ago.
 
 
 lockdown=1584489540 # date --date "17 March 2020 23:59" +%s

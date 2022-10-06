@@ -60,7 +60,9 @@ Host orac
 # new static IP 2020-06-05
 #    HostName 155.198.204.4
 # Got me own address!
-    Hostname ph-jmf02ws.ph.ic.ac.uk
+#    Hostname ph-jmf02ws.ph.ic.ac.uk
+#   White City - static?
+    Hostname 129.31.67.6
     User jarvist
 Host oracipv6
     Hostname 2a0c:5bc0:40:10cc:86a9:3eff:fe6e:e82f

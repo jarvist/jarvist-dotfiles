@@ -75,6 +75,10 @@ convert "$1" -morphology Convolve DoG:15,100,0 -negate -normalize -blur 0x1 -cha
 }
 alias whiteboard=whiteboardme
 
+# Post to my .plan
+alias plan=' T=`mktemp` && curl -so $T https://plan.cat/~jarvist && vim $T && \
+  curl -su jarvist -F "plan=<$T" https://plan.cat/stdin'
+
 # Weather via wttr.in service to Wego command line app (unicode terminal only!)
 alias weatherbath='curl http://wttr.in/bath '
 alias weatherlondon='curl http://wttr.in/london '

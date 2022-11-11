@@ -20,13 +20,6 @@ shopt -s histappend
 HISTSIZE=100000
 HISTFILESIZE=200000
 
-# vim input mode; also see .inputrc for readline 
-set -o vi
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
 #so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
 #  Nb: now that I use VS code, I switch to vim, Ctrl-S, and hang the terminal :^)
 stty -ixon
@@ -48,10 +41,15 @@ normal=`tput sgr0`
 # Looks Like:
 # [Tue24May-12:55]jarvist@chmc-7602:~/
 # >
-PS1="\[${TITLEBAR}${bold}\][\D{%a%d%b-%R}]\u@\h:\w/ \n; \[${normal}\]"
+if [ -n "$ZSH_VERSION" ]; then
+    PS1="%B[%D{%a%d%b-%R}]%n@%M:%/%b
+; "
+elif [ -n "$BASH_VERSION" ]; then
+    PS1="\[${TITLEBAR}${bold}\][\D{%a%d%b-%R}]\u@\h:\w/ \n; \[${normal}\]"
 
 # Archive history line by line to own per-day file
-PROMPT_COMMAND=' echo "$(date "+%Y-%m-%d.%H:%M:%S")${USER}@${HOSTNAME}:$(pwd) $(history 1)" >> ~/.logs/$(date "+%Y-%m-%d")-${HOSTNAME}-bash.log '
+    PROMPT_COMMAND=' echo "$(date "+%Y-%m-%d.%H:%M:%S")${USER}@${HOSTNAME}:$(pwd) $(history 1)" >> ~/.logs/$(date "+%Y-%m-%d")-${HOSTNAME}-bash.log '
+fi
 
 # https://news.ycombinator.com/item?id=19762190
 # The tl;dr here is that "ls" can be much faster if you disable colorizing files based on the their file capabilities, setuid/setgid bits, or executable flag.
@@ -165,17 +163,6 @@ if [ -d ~/hpc-bin ] ; then
 fi
 export PATH
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
-# Homebrew 'brew install bash-completion' on Mac
-if [ -f /usr/local/etc/profile.d/bash_completion.sh ] && ! shopt -oq posix; then
-    . "/usr/local/etc/profile.d/bash_completion.sh"
-fi
-
 if [ -n "$DISPLAY" ]; then
     xset b off
 fi
@@ -209,17 +196,6 @@ linux-gnu*) # Debian
 ;;
 esac
 
-
-if [ "$HOSTNAME" == "hodgkin" ]
-then
-    xmodmap ~/.xmodmap 
-    # Curent just a remap for /? key + AltGr to give me \| 
-    #   (Model M keyboard; PS/2 adapter generates no keycodes from physically pressing down this key!!!)
-    #> cat .xmodmap 
-    #keycode 61 = slash question backslash bar backslash bar
-
-    source ~/GTN.sh # Top secret work defaults
-fi
 
 # turn on auto-jump. Use 'j' to jump!
 source /usr/share/autojump/autojump.sh
@@ -269,4 +245,13 @@ echo "First vaccine:  " `expr $diff  / 86400`  days  `expr \( $diff % 86400 \) /
 echo "Week ` date +%V ` of `date +%Y`."
 
 export GAUSS_EXEDIR=/usr/local/bin/g16.dir/
+
+# Highly Bash specific stuff that chokes ZSh
+# vim input mode; also see .inputrc for readline 
+set -o vi
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
 

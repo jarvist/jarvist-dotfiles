@@ -102,7 +102,6 @@ alias soma-groovesalad='mplayer -playlist http://somafm.com/groovesalad130.pls '
 alias soma-folkforward='mplayer -playlist http://somafm.com/folkfwd130.pls '
 alias soma-underground80s='mplayer -playlist http://somafm.com/u80s130.pls '
 alias soma-missioncontrol='mplayer -playlist http://somafm.com/missioncontrol64.pls ' # Only 64 kbps stream?
-
 # BBC: What else do you need other than R4 and R6?  :)
 # Latest working playlists from: https://gist.github.com/noodlebug/0e5e3754f4e8dbf608e72431b9c34484
 # Fiddled with URLS until I got High Res streams (within UK), 2017-06-07
@@ -124,6 +123,9 @@ alias r3med='mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simulc
 alias r3='mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_three.m3u8 '
 
 alias worldservice='mplayer "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_low/ak/bbc_world_service.m3u8" ' # lo-fi alas, 96 kbps ?, AAC
+# WeFunk ; 
+alias wefunk='mplayer"https://www.wefunkradio.com/play/radio.pls" ' # 
+
 
 alias datestamp='rename "s/^/`date +%Y-%m-%d`-JarvistMooreFrost-/" '
 

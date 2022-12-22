@@ -22,3 +22,5 @@
 	editor = vim
 [github]
 	user = jarvist
+[init]
+	defaultBranch = main

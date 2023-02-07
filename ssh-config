@@ -64,7 +64,7 @@ Host orac
 # Got me own address!
 #    Hostname ph-jmf02ws.ph.ic.ac.uk
 #   White City - static?
-    Hostname 172.22.199.213 
+    Hostname 172.22.196.224
     User jarvist
 Host oracipv6
     Hostname 2a0c:5bc0:40:1a06:86a9:3eff:fe6e:e82f
@@ -132,9 +132,10 @@ Host wonder napier iden
 #   \___/ \____|_____|
 #
 
-Host thomas young
-    User mmm0096
-    HostName thomas.rc.ucl.ac.uk
+Host young
+    User mmm1222
+    IdentityFile ~/.ssh/id_rsa_archer
+    HostName young.rc.ucl.ac.uk
 
 # Home Net
 Host pi raspberry

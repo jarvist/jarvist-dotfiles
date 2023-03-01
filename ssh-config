@@ -124,9 +124,10 @@ Host wonder napier iden
 #   \___/ \____|_____|
 #
 
-Host thomas young
-    User mmm0096
-    HostName thomas.rc.ucl.ac.uk
+Host young
+    User mmm1222
+    IdentityFile ~/.ssh/id_rsa_archer
+    HostName young.rc.ucl.ac.uk
 
 # Home Net
 Host pi raspberry

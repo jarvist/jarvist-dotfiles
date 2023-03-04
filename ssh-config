@@ -1,38 +1,28 @@
 # Jarvist Moore Frost; 2014-2015
-#In levels of increasing subtlety, this ssh-config contains:-
-#* default usernames / shortened hostnames for Bath / IC / EPSRC national
-#facilities (bash autocomplete also reads these); this is more elegant and
-#general than doing the same with bash 'alias'
-#* Better default keep-alives, so that your SSH sessions are more robust to
-#being closed (matters a lot on dodgy wifi) 
-#* tunnelling over SSH via lcpu into bath.ac.uk resources (i.e. no need for
-#a VPN to get to Aquila / Neon etc.). These are the 'xxxx-tunnel' shortcuts.
-#* Master sessions enabled (further ssh / scp commands are tunnelled over the
-#master session, stopping you hammering the login nodes. It's almost instantly
-#fast to spawn another shell session, rather than TCP / SSH handshake, which
-#means SCP command paths autocomplete just as fast as 'cd'ing' on the login
-#node.)
+#In levels of increasing subtlety, this ssh-config contains:- 
+# * default usernames / shortened hostnames for Bath / IC / EPSRC national
+# facilities (bash autocomplete also reads these); this is more elegant and
+# general than doing the same with bash 'alias' 
+# * Better default keep-alives, so that your SSH sessions are more robust to
+# being closed (matters a lot on dodgy wifi) 
+# * Master sessions enabled (further ssh / scp commands are tunnelled over the
+# master session, stopping you hammering the login nodes. It's almost instantly
+# fast to spawn another shell session, rather than TCP / SSH handshake, which
+# means SCP command paths autocomplete just as fast as 'cd'ing' on the login
+# node.)
 #
 #Nb: Rsync reads this file too
 
-#Host *
-#   UseRoaming no
-# Workaround for http://undeadly.org/cgi?action=article&sid=20160114142733
-
 # Global settings
 Host *
-    Protocol 2 
-# Protocol 1 well dodgy
+    Protocol 2 # Protocol 1 well dodgy
     Compression yes
-    ServerAliveCountMax 5  
-# Up to 5 pings with no reply before hang up
-    ServerAliveInterval 30 
-# Seconds. Needs to be <60s for some home routers
-# Don't offer all keys you can find... protects against compromised host
-# somewhat.
-    IdentitiesOnly yes
-# don't bounce keys through the service
-    ForwardAgent no
+    ServerAliveCountMax 5  # Up to 5 pings with no reply before hang up
+    ServerAliveInterval 30 # Seconds. Needs to be <60s for some home routers o_o
+    IdentitiesOnly yes # Don't offer all keys you can find... protects against
+    # compromised host somewhat 
+    ForwardAgent no # Don't bounce keys through the service; turn this on for
+    # specific trusted hosts where necessary
 
 
 # Enable Master Sessions - (for scp autocomplete + not hammering HPC facilities)
@@ -78,7 +68,7 @@ Host union
     ForwardAgent yes 
 #above ForwardAgent allows access to github via local machine keys
 
-# Imperial's SSH gate-way
+# Imperial's SSH gate-way; it's a bit shit though. Can't/Won't forward.
 Host sshgw
     HostName sshgw.ic.ac.uk
     User jmf02
@@ -92,19 +82,12 @@ Host sshgw
 #    |_____||_|    |____/ |_| \_\ \____|
 
 # EPSRC National facilities
-Host archer
-    User jarvist
-    IdentityFile ~/.ssh/id_rsa_archer
-    HostName login.archer.ac.uk
-
+# HECTOR is dead! Long live ARCHER!
+# ARCHER is dead! Long live ARCHER2!
 Host archer2
     User jarvist
     IdentityFile ~/.ssh/id_rsa_archer
     HostName login.archer2.ac.uk
-
-Host archer24c
-    User jarvist
-    HostName login-4c.archer2.ac.uk
 
 
 # ____    _    ____  _____ ____  ____  _   _ ______   __

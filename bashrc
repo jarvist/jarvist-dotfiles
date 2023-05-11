@@ -44,6 +44,11 @@ normal=`tput sgr0`
 if [ -n "$ZSH_VERSION" ]; then
     PS1="%B[%D{%a%d%b-%R}]%n@%M:%/%b
 ; "
+    HOSTNAME=` hostname `
+    precmd() {
+    print -r -- "$(date "+%Y-%m-%d.%H:%M:%S")${USER}@${HOSTNAME}:$(pwd) $(fc -ln -1)" >> ~/.logs/$(date "+%Y-%m-%d")-${HOSTNAME}-zsh.log
+}
+
 elif [ -n "$BASH_VERSION" ]; then
     PS1="\[${TITLEBAR}${bold}\][\D{%a%d%b-%R}]\u@\h:\w/ \n; \[${normal}\]"
 

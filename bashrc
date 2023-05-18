@@ -107,6 +107,15 @@ alias soma-groovesalad='mplayer -playlist http://somafm.com/groovesalad130.pls '
 alias soma-folkforward='mplayer -playlist http://somafm.com/folkfwd130.pls '
 alias soma-underground80s='mplayer -playlist http://somafm.com/u80s130.pls '
 alias soma-missioncontrol='mplayer -playlist http://somafm.com/missioncontrol64.pls ' # Only 64 kbps stream?
+# Rekt network
+alias rekt-datawave='mplayer http://stream.rekt.network/datawave.ogg '
+alias rekt-nightride='mplayer http://stream.rekt.network/nightride.ogg '
+alias rekt-chillsynth='mplayer http://stream.rekt.network/chillsynth.ogg '
+alias rekt-darksynth='mplayer http://stream.rekt.network/darksynth.ogg '
+alias rekt-horrorsynth='mplayer http://stream.rekt.network/horrorsynth.ogg '
+alias rekt-rekt='mplayer http://stream.rekt.network/rekt.ogg '
+alias rekt-rektory='mplayer http://stream.rekt.network/rektory.ogg '
+
 # BBC: What else do you need other than R4 and R6?  :)
 # Latest working playlists from: https://gist.github.com/noodlebug/0e5e3754f4e8dbf608e72431b9c34484
 # Fiddled with URLS until I got High Res streams (within UK), 2017-06-07

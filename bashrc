@@ -163,7 +163,11 @@ alias isvg="rsvg-convert | icat"
 alias ls='ls -Gp' #p to show trailing / on directory/ names
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -CF'
+
+# Drops useful info into current README.md; and opens vim. 
+# Attempt to reduce fiction at documenting as I go along.
+alias log="{ date; echo -n 'Sea state: '; printf 'Smooth\nSlight\nModerate\nRough\nVery rough\nHigh\nVery high\nPhenomenal\n' | shuf -n1 ; echo -n '$USER@$HOSTNAME: '; pwd; echo; } >> README.md && vim README.md"
+alias l=log
 
 # set title of current terminal to `termtitle FOO` 
 function setTerminalTitle { echo -ne "\033]0;${1}\007"; } 

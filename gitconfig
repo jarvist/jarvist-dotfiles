@@ -18,7 +18,7 @@
 [push]
 	default = simple
 [pull]
-    rebase = true
+	rebase = true
 [core]
 	editor = vim
 [github]

@@ -17,11 +17,15 @@
 Host *
     Protocol 2 # Protocol 1 well dodgy
     Compression yes
-    ServerAliveCountMax 5  # Up to 5 pings with no reply before hang up
-    ServerAliveInterval 30 # Seconds. Needs to be <60s for some home routers o_o
-    IdentitiesOnly yes # Don't offer all keys you can find... protects against
+    ServerAliveCountMax 5  
+    # Up to 5 pings with no reply before hang up
+    ServerAliveInterval 30 
+    # Seconds. Needs to be <60s for some home routers o_o
+    IdentitiesOnly yes 
+    # Don't offer all keys you can find... protects against
     # compromised host somewhat 
-    ForwardAgent no # Don't bounce keys through the service; turn this on for
+    ForwardAgent no 
+    # Don't bounce keys through the service; turn this on for
     # specific trusted hosts where necessary
 
 

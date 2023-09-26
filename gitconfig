@@ -10,6 +10,7 @@
     unstash = stash pop
 
     wdiff = diff --color-words 
+    wc = ! git diff --word-diff=porcelain | grep -e '^+[^+]' | wc -w
 
 [color]
     ui = auto

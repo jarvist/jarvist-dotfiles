@@ -260,6 +260,11 @@ jab=1622293200 #; date --date "29 May 2021 14:00" +%s
 diff=` expr $now - $jab`
 echo "First vaccine:  " `expr $diff  / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
 
+#date --date "12 Dec 2023 23:00" +%s
+erccog=1702422000
+diff=` expr $erccog - $now`
+echo "ERC CoG deadline:  " `expr $diff  / 86400` " days " 
+
 
 
 echo "Week ` date +%V ` of `date +%Y`."

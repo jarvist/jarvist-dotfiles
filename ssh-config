@@ -75,6 +75,11 @@ Host hpc cx1
     HostName login.hpc.ic.ac.uk
     User jmf02
 
+Host hx1 
+    # does not resolve from outside Imperial, so need full ipv6 (temporary)
+    HostName 2a0c:5bc0:89:ab0:0:c12:1:171
+    User jmf02
+
 Host union
     HostName union.ic.ac.uk
     User jmf02

@@ -79,9 +79,9 @@ Host hpc cx1
 # CX3-phase2: hopefully this will be sanitised shortly
 
 Host cx3 cx3-p2
+    #HostName login-ai.cx3.hpc.ic.ac.uk
     HostName 2a0c:5bc0:89:a11:ba3f:d2ff:fe69:c072
     # As with HX1, only resolves within Imperial (NOT VPN)
-    #HostName login-ai.cx3.hpc.ic.ac.uk
 
 Host cx3-p2-EPYC
     HostName login-b.cx3.hpc.ic.ac.uk	# AMD EPYC 7742 64-Core Processor (Rome)

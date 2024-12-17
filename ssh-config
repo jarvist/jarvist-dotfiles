@@ -65,6 +65,12 @@ Host zorac zoracipv6
     Hostname 2a0c:5bc0:40:1a06:7e57:58ff:fe37:ad57
     User jarvist
 
+# MSRH 601F
+# 256GB Xeon w7-3545 24C, RTX A6000 (48GB) (Dec 2024)
+Host epicac
+    Hostname 2a0c:5bc0:40:1a06:3213:8bff:fe6d:6f0
+    User jarvist
+
 # MSRH 601F M1 Mac Mini
 Host ensor ensoripv6
     #Hostname dyn1067-161.ch.ic.ac.uk

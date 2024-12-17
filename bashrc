@@ -280,3 +280,18 @@ set -o vi
 shopt -s checkwinsize
 
 
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+case ":$PATH:" in
+    *:/Users/jarvist/.juliaup/bin:*)
+        ;;
+
+    *)
+        export PATH=/Users/jarvist/.juliaup/bin${PATH:+:${PATH}}
+        ;;
+esac
+
+# <<< juliaup initialize <<<

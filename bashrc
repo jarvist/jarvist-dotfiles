@@ -124,21 +124,20 @@ alias rekt-rektory='mplayer http://stream.rekt.network/rektory.ogg '
 # Low res ~ 44.6 kbps - AVAILABLE INTERNATIONALLY
 # Med res ~ 130 kbps
 # High res ~ 320 kbps - COOKING ON GAS
-alias r6low='mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_6music.m3u8 '
-alias r6med='mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_6music.m3u8 '
-alias r6='mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_6music.m3u8 '
 
-alias r4low='mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_radio_fourfm.m3u8 '
-alias r4med='mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_radio_fourfm.m3u8 ' 
-alias r4='mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_fourfm.m3u8 ' 
+alias r1='mplayer "http://lstn.lv/bbcradio.m3u8?station=bbc_radio_one&bitrate=320000" '
+alias r2='mplayer "http://lstn.lv/bbcradio.m3u8?station=bbc_radio_two&bitrate=320000" '
+alias r3='mplayer "http://lstn.lv/bbcradio.m3u8?station=bbc_radio_three&bitrate=320000" '
+alias r4='mplayer "http://lstn.lv/bbcradio.m3u8?station=bbc_radio_fourfm&bitrate=320000" '
 
-alias r3low='mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/low/ak/bbc_radio_three.m3u8 ' 
-alias r3med='mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/high/ak/bbc_radio_three.m3u8 ' 
-alias r3='mplayer http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_three.m3u8 '
+alias r6='mplayer "http://lstn.lv/bbcradio.m3u8?station=bbc_6music&bitrate=320000" '
 
-alias worldservice='mplayer "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_low/ak/bbc_world_service.m3u8" ' # lo-fi alas, 96 kbps ?, AAC
+alias r_ulster='mplayer "http://lstn.lv/bbcradio.m3u8?station=bbc_radio_ulster&bitrate=320000" '
+
+alias r_worldservice='mplayer http://stream.live.vc.bbcmedia.co.uk/bbc_world_service '
+
 # WeFunk ; 
-alias wefunk='mplayer"https://www.wefunkradio.com/play/radio.pls" ' # 
+alias wefunk='mplayer "https://www.wefunkradio.com/play/radio.pls" ' # 
 
 
 alias datestamp='rename "s/^/`date +%Y-%m-%d`-JarvistMooreFrost-/" '
@@ -279,6 +278,7 @@ set -o vi
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+alias julia="/Users/jmf02/.juliaup/bin/julia"
 
 
 # >>> juliaup initialize >>>

@@ -177,10 +177,6 @@ set cursorline!
 set modelines=0
 set nomodeline
 
-set statusline+=%3{codeium#GetStatusString()}
-imap <C-j>   <Cmd>call codeium#CycleCompletions(1)<CR>
-imap <C-k>   <Cmd>call codeium#CycleCompletions(-1)<CR>
-
 
 " required for julia-vim block-wise navigation
 runtime macros/matchit.vim

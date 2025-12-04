@@ -62,6 +62,7 @@ Host orac oracipv6
 # MSRH 601F
 # 256GB Xeon 6226R 2x16C, RTX A4000 (16GB) (June 2023)
 Host zorac zoracipv6
+    #Hostname zorac.ch.ic.ac.uk
     Hostname 2a0c:5bc0:40:1a06:7e57:58ff:fe37:ad57
     User jarvist
 

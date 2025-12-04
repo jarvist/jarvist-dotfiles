@@ -239,7 +239,7 @@ echo "Last struck by lightning:    " `expr $diff / 86400`  days  `expr \( $diff 
 
 theend=1542192060 # ` date --date "14 Nov 2018 10:41" +%s ` # precomputed for Mac :^)
 diff=` expr $now - $theend  `
-echo "Tean is:  " `expr $diff  / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds old.
+echo "Tean is:                     " `expr $diff  / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds old.
 
 #theend=` date --date "31 Dec 2018 23:58" +%s `
 #now=` date  +%s `
@@ -248,23 +248,21 @@ echo "Tean is:  " `expr $diff  / 86400`  days  `expr \( $diff % 86400 \) / 3600`
 
 theend=1606452420 #date --date "27 November 2020 04:47" +%s
 diff=` expr $now - $theend  `
-echo "Delivered baby Tove:  " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds ago.
+echo "Delivered baby Tove:         " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds ago.
 
 
-lockdown=1584489540 # date --date "17 March 2020 23:59" +%s
-diff=` expr $now - $lockdown`
-echo "Lockdown for:  " `expr $diff / 604800` weeks `expr \( $diff % 604800 \) / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
+#lockdown=1584489540 # date --date "17 March 2020 23:59" +%s
+#diff=` expr $now - $lockdown`
+#echo "Lockdown for:  " `expr $diff / 604800` weeks `expr \( $diff % 604800 \) / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
 
-jab=1622293200 #; date --date "29 May 2021 14:00" +%s
-diff=` expr $now - $jab`
-echo "First vaccine:  " `expr $diff  / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
+#jab=1622293200 #; date --date "29 May 2021 14:00" +%s
+#diff=` expr $now - $jab`
+#echo "First vaccine:  " `expr $diff  / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
 
 #date --date "12 Dec 2023 23:00" +%s
-erccog=1702422000
-diff=` expr $erccog - $now`
-echo "ERC CoG deadline:  " `expr $diff  / 86400` " days " 
-
-
+#erccog=1702422000
+#diff=` expr $erccog - $now`
+#echo "ERC CoG deadline:  " `expr $diff  / 86400` " days " 
 
 echo "Week ` date +%V ` of `date +%Y`."
 
@@ -281,6 +279,10 @@ shopt -s checkwinsize
 alias julia="/Users/jmf02/.juliaup/bin/julia"
 
 
+## I'm not a great fan of the nonsense below: they didn't even ask before editing!
+# And its deeply platform specific. I'm forced to be jmf02 on Uni admin'd
+# machines; different locations on Linux etc. Grump grump.
+
 # >>> juliaup initialize >>>
 
 # !! Contents within this block are managed by juliaup !!
@@ -295,3 +297,10 @@ case ":$PATH:" in
 esac
 
 # <<< juliaup initialize <<<
+
+# ORCA 6.1.1 secion
+export PATH=/Users/jmf02/Library/orca_6_1_1:$PATH
+
+# ORCA 6.1.1 secion
+export PATH=/Users/jmf02/Library/orca_6_1_1_h2y8:$PATH
+

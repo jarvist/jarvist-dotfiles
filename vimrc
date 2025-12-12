@@ -1,7 +1,7 @@
 "set tenc=latin1 " Filthy hack for MRXVT
 
 filetype off
-call pathogen#incubate()
+" call pathogen#incubate()  " I don't think I actually use these any more?
 filetype plugin indent on   " detect file type and load indents and plugins
 syntax on                   " turn on syntax highlighting
 

@@ -72,11 +72,10 @@ Host epicac
     Hostname 2a0c:5bc0:40:1a06:3213:8bff:fe6d:6f0
     User jarvist
 
-# MSRH 601F M1 Mac Mini
+# MSRH 601F; Jarv's desktop - Mac Studio 
 Host ensor ensoripv6
-    #Hostname dyn1067-161.ch.ic.ac.uk
-    Hostname 2a0c:5bc0:40:14f0:1cc1:36bb:13d3:7fa0
-    User jarvist
+    Hostname 2a0c:5bc0:40:2b50:c58:ab89:bbed:5e1a
+    User jmf02
 
 Host hpc cx1
     HostName login.hpc.ic.ac.uk

@@ -110,7 +110,7 @@ alias soma-groovesalad='mplayer -playlist http://somafm.com/groovesalad130.pls '
 alias soma-folkforward='mplayer -playlist http://somafm.com/folkfwd130.pls '
 alias soma-underground80s='mplayer -playlist http://somafm.com/u80s130.pls '
 alias soma-missioncontrol='mplayer -playlist http://somafm.com/missioncontrol64.pls ' # Only 64 kbps stream?
-# Rekt network
+# Rekt network - Cyberpunk Radio
 alias rekt-datawave='mplayer http://stream.rekt.network/datawave.ogg '
 alias rekt-nightride='mplayer http://stream.rekt.network/nightride.ogg '
 alias rekt-chillsynth='mplayer http://stream.rekt.network/chillsynth.ogg '
@@ -128,19 +128,19 @@ alias rekt-rektory='mplayer http://stream.rekt.network/rektory.ogg '
 # Med res ~ 130 kbps
 # High res ~ 320 kbps - COOKING ON GAS
 
-alias r1='mplayer "http://lstn.lv/bbcradio.m3u8?station=bbc_radio_one&bitrate=320000" '
-alias r2='mplayer "http://lstn.lv/bbcradio.m3u8?station=bbc_radio_two&bitrate=320000" '
-alias r3='mplayer "http://lstn.lv/bbcradio.m3u8?station=bbc_radio_three&bitrate=320000" '
-alias r4='mplayer "http://lstn.lv/bbcradio.m3u8?station=bbc_radio_fourfm&bitrate=320000" '
+alias r1='mplayer "http://lsn.lv/bbcradio.m3u8?station=bbc_radio_one&bitrate=320000" '
+alias r2='mplayer "http://lsn.lv/bbcradio.m3u8?station=bbc_radio_two&bitrate=320000" '
+alias r3='mplayer "http://lsn.lv/bbcradio.m3u8?station=bbc_radio_three&bitrate=320000" '
+alias r4='mplayer "http://lsn.lv/bbcradio.m3u8?station=bbc_radio_fourfm&bitrate=320000" '
 
-alias r6='mplayer "http://lstn.lv/bbcradio.m3u8?station=bbc_6music&bitrate=320000" '
+alias r6='mplayer "http://lsn.lv/bbcradio.m3u8?station=bbc_6music&bitrate=320000" '
 
-alias r_ulster='mplayer "http://lstn.lv/bbcradio.m3u8?station=bbc_radio_ulster&bitrate=320000" '
+alias r_ulster='mplayer "http://lsn.lv/bbcradio.m3u8?station=bbc_radio_ulster&bitrate=320000" '
 
 alias r_worldservice='mplayer http://stream.live.vc.bbcmedia.co.uk/bbc_world_service '
 
 # WeFunk ; 
-alias wefunk='mplayer "https://www.wefunkradio.com/play/radio.pls" ' # 
+alias wefunk='mplayer "http://www.wefunkradio.com/play/radio.pls" ' # 
 
 
 alias datestamp='rename "s/^/`date +%Y-%m-%d`-JarvistMooreFrost-/" '
@@ -246,10 +246,9 @@ set -o vi
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
-shopt -s checkwinsize
+[ -n "$BASH_VERSION" ] && shopt -s checkwinsize
 
 alias julia="/Users/jmf02/.juliaup/bin/julia"
-
 
 ## I'm not a great fan of the nonsense below: they didn't even ask before editing!
 # And its deeply platform specific. I'm forced to be jmf02 on Uni admin'd

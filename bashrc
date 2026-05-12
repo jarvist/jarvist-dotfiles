@@ -42,6 +42,9 @@ normal=`tput sgr0`
 # [Tue24May-12:55]jarvist@chmc-7602:~/
 # >
 if [ -n "$ZSH_VERSION" ]; then
+    # z-sh autocompletes, so you can tab within scp etc.
+    autoload -Uz compinit
+    compinit
     PS1="%B[%D{%a%d%b-%R}]%n@%M:%/%b
 ; "
     HOSTNAME=` hostname `
@@ -185,36 +188,6 @@ export PATH
 if [ -n "$DISPLAY" ]; then
     xset b off
 fi
-
-# PLATFORM specific stuff
-
-# Detect the platform.
-case "$OSTYPE" 
-in darwin*) # Mac (OSX)
-    #echo "Hipster mode (OSX) enabled..."
-    # Abuse Apple's open command; so you can use 'program file' sensible in terminal
-    alias vesta='open -a Vesta '
-    alias ase="source ~/Virtualenvs/python-ase-3.8.1.3440/bin/activate"
-;;
-linux-gnu*) # Debian
-#echo "Debian Linux; woo"
-# Oh god I'm turning into a mac head; these enables you to 'open File' and it'll do a Mime-esque guess
-    alias open='xdg-open'
-    
-    xrdb ~/.XResources # icewm itself doesn't seem to load this. mainly urxvt defaults.
-    
-# These use the pleasantly simple https://github.com/jonls/redshift/ to change colour temperature
-    alias redshiftnow='redshift -l 51:0 -o ' #Hardcoded to London; this is where it's at.
-# nice limits for brightness; works with my Thinkpad X220
-    alias bright='xbacklight -time 0 -set 100'
-    alias dim='xbacklight -time 0 -set 10'
-# colour temperature + brightness in one alias
-    alias night='redshift -O 2700 && dim'
-    alias mars='redshift -O 3500 -g 1:0.1:0.1 && dim' # The rust planet. Blue and Green are gone.
-    alias day='redshift -O 5600 && bright ' #I'm good with daylight
-;;
-esac
-
 
 # turn on auto-jump. Use 'j' to jump!
 source /usr/share/autojump/autojump.sh

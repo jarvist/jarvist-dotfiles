@@ -208,11 +208,11 @@ now=` date  +%s `
 
 theend=1499800800 # ` date --date "11 July 2017 20:20" +%s ` # precomputed for mac
 diff=` expr $now - $theend  `
-echo "Last struck by lightning:    " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds ago.
+echo "Last struck by lightning:    $((diff / 86400)) days $(((diff % 86400) / 3600)) hours $(((diff % 3600) / 60)) minutes $((diff % 60)) seconds ago."
 
 theend=1542192060 # ` date --date "14 Nov 2018 10:41" +%s ` # precomputed for Mac :^)
 diff=` expr $now - $theend  `
-echo "Tean is:                     " `expr $diff  / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds old.
+echo "Tean is:                     $((diff / 86400)) days $(((diff % 86400) / 3600)) hours $(((diff % 3600) / 60)) minutes $((diff % 60)) seconds ago."
 
 #theend=` date --date "31 Dec 2018 23:58" +%s `
 #now=` date  +%s `
@@ -221,8 +221,7 @@ echo "Tean is:                     " `expr $diff  / 86400`  days  `expr \( $diff
 
 theend=1606452420 #date --date "27 November 2020 04:47" +%s
 diff=` expr $now - $theend  `
-echo "Delivered baby Tove:         " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds ago.
-
+echo "Delivered baby Tove:         $((diff / 86400)) days $(((diff % 86400) / 3600)) hours $(((diff % 3600) / 60)) minutes $((diff % 60)) seconds ago."
 
 #lockdown=1584489540 # date --date "17 March 2020 23:59" +%s
 #diff=` expr $now - $lockdown`

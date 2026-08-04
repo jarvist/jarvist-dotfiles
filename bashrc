@@ -148,11 +148,15 @@ alias datestamp='rename "s/^/`date +%Y-%m-%d`-JarvistMooreFrost-/" '
 # Output full set of 256 termcolours for when I'm playing with colourschemes
 alias termcolours='for x in 0 1 4 5 7 8; do for i in `seq 30 37`; do for a in `seq 40 47`; do echo -ne "\e[$x;$i;$a""m\\\e[$x;$i;$a""m\e[0;37;40m "; done; echo; done; done; echo "";'
 
-# Nice list here: https://jonasjacek.github.io/colors/ - xterm name is the easiest method
+# Nice list here: https://jonasjacek.github.io/colors/ - 'Xterm Name' is the easiest way to set them
 alias backgroundblue="printf '\033]11;navyblue\007'"
 alias backgroundred="printf '\033]11;darkred\007'"
 alias backgroundpurple="printf '\033]11;plum4\007'"
 alias backgroundteal="printf '\033]11;teal\007'"
+alias backgroundgreen="printf '\033]11;DarkGreen\007'"
+alias backgroundorange="printf '\033]11;DarkOrange4\007'"
+alias backgroundslate="printf '\033]11;DarkSlateGray\007'"
+alias backgroundberry="printf '\033]11;DeepPink4\007'"
 
 # Bash key bindings
 alias bashbindings="bind -p | grep -v '^#\|self-insert\|^$' "
@@ -183,6 +187,14 @@ fi
 if [ -d ~/hpc-bin ] ; then
  PATH=~/hpc-bin:"${PATH}"
 fi
+
+# ORCA 6.1.1 secion (auto added? who knows)
+PATH=/Users/jmf02/Library/orca_6_1_1:$PATH
+# ORCA 6.1.1 secion
+PATH=/Users/jmf02/Library/orca_6_1_1_h2y8:$PATH
+# Added by Antigravity CLI installer
+PATH="/Users/jmf02/.local/bin:$PATH"
+
 export PATH
 
 if [ -n "$DISPLAY" ]; then
@@ -259,19 +271,16 @@ alias julia="/Users/jmf02/.juliaup/bin/julia"
 # !! Contents within this block are managed by juliaup !!
 
 case ":$PATH:" in
-    *:/Users/jarvist/.juliaup/bin:*)
+    *:/Users/jmf02/.juliaup/bin:*)
         ;;
 
     *)
-        export PATH=/Users/jarvist/.juliaup/bin${PATH:+:${PATH}}
+        export PATH=/Users/jmf02/.juliaup/bin${PATH:+:${PATH}}
         ;;
 esac
+# Tab completion for juliaup and julia channel selection
+[ -f "/Users/jmf02/.julia/juliaup/completions/bash.sh" ] && source "/Users/jmf02/.julia/juliaup/completions/bash.sh"
 
 # <<< juliaup initialize <<<
 
-# ORCA 6.1.1 secion
-export PATH=/Users/jmf02/Library/orca_6_1_1:$PATH
-
-# ORCA 6.1.1 secion
-export PATH=/Users/jmf02/Library/orca_6_1_1_h2y8:$PATH
 

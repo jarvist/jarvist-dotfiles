@@ -45,9 +45,14 @@ if [ -n "$ZSH_VERSION" ]; then
     # z-sh autocompletes, so you can tab within scp etc.
     autoload -Uz compinit
     compinit
-    PS1="%B[%D{%a%d%b-%R}]%n@%M:%/%b
+    case "$HOST" in # apparently HOST is set my ZSH
+        IC-MM72V3T2YK) HOSTNAME="Ansible" ;; #Mac Pro laptop; because it is mainly a gateway
+        IC-YJPMYH5L23) HOSTNAME="Ensor" ;; # Mac Studio, MSRH
+        *) HOSTNAME="$HOST" ;;
+    esac
+
+    PS1="%B[%D{%a%d%b-%R}]%n@${HOSTNAME}:%/%b
 ; "
-    HOSTNAME=` hostname `
     precmd() {
     print -r -- "$(date "+%Y-%m-%d.%H:%M:%S")${USER}@${HOSTNAME}:$(pwd) $(fc -ln -1)" >> ~/.logs/$(date "+%Y-%m-%d")-${HOSTNAME}-zsh.log
 }
@@ -224,29 +229,15 @@ echo "Last struck by lightning:    $((diff / 86400)) days $(((diff % 86400) / 36
 
 theend=1542192060 # ` date --date "14 Nov 2018 10:41" +%s ` # precomputed for Mac :^)
 diff=` expr $now - $theend  `
-echo "Tean is:                     $((diff / 86400)) days $(((diff % 86400) / 3600)) hours $(((diff % 3600) / 60)) minutes $((diff % 60)) seconds ago."
-
-#theend=` date --date "31 Dec 2018 23:58" +%s `
-#now=` date  +%s `
-#diff=` expr $theend - $now  `
-#echo "Last minute in the academy:  " `expr $diff / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
+echo "Tean is:                     $((diff / 86400)) days $(((diff % 86400) / 3600)) hours $(((diff % 3600) / 60)) minutes $((diff % 60)) seconds old."
 
 theend=1606452420 #date --date "27 November 2020 04:47" +%s
 diff=` expr $now - $theend  `
 echo "Delivered baby Tove:         $((diff / 86400)) days $(((diff % 86400) / 3600)) hours $(((diff % 3600) / 60)) minutes $((diff % 60)) seconds ago."
 
-#lockdown=1584489540 # date --date "17 March 2020 23:59" +%s
-#diff=` expr $now - $lockdown`
-#echo "Lockdown for:  " `expr $diff / 604800` weeks `expr \( $diff % 604800 \) / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
-
-#jab=1622293200 #; date --date "29 May 2021 14:00" +%s
-#diff=` expr $now - $jab`
-#echo "First vaccine:  " `expr $diff  / 86400`  days  `expr \( $diff % 86400 \) / 3600` hours `expr \( \( $diff % 86400 \) % 3600 \) / 60` minutes `expr $diff % 60` seconds.
-
-#date --date "12 Dec 2023 23:00" +%s
-#erccog=1702422000
-#diff=` expr $erccog - $now`
-#echo "ERC CoG deadline:  " `expr $diff  / 86400` " days " 
+theend=1781735580 #date --date "17 June 2026 23:33" +%s
+diff=` expr $now - $theend  `
+echo "Rhoda is:                     $((diff / 86400)) days $(((diff % 86400) / 3600)) hours $(((diff % 3600) / 60)) minutes $((diff % 60)) seconds old."
 
 echo "Week ` date +%V ` of `date +%Y`."
 
@@ -266,10 +257,6 @@ alias julia="/Users/jmf02/.juliaup/bin/julia"
 # And its deeply platform specific. I'm forced to be jmf02 on Uni admin'd
 # machines; different locations on Linux etc. Grump grump.
 
-# >>> juliaup initialize >>>
-
-# !! Contents within this block are managed by juliaup !!
-
 case ":$PATH:" in
     *:/Users/jmf02/.juliaup/bin:*)
         ;;
@@ -279,8 +266,12 @@ case ":$PATH:" in
         ;;
 esac
 # Tab completion for juliaup and julia channel selection
-[ -f "/Users/jmf02/.julia/juliaup/completions/bash.sh" ] && source "/Users/jmf02/.julia/juliaup/completions/bash.sh"
+#[ -f "/Users/jmf02/.julia/juliaup/completions/bash.sh" ] && source "/Users/jmf02/.julia/juliaup/completions/bash.sh"
+# Tab completion for juliaup and julia channel selection
+[ -f "/Users/jmf02/.julia/juliaup/completions/zsh.zsh" ] && source "/Users/jmf02/.julia/juliaup/completions/zsh.zsh"
 
-# <<< juliaup initialize <<<
-
+# Added by Antigravity IDE
+export PATH="/Users/jmf02/.antigravity-ide/antigravity-ide/bin:$PATH"
+# Added by Antigravity CLI installer
+export PATH="/Users/jmf02/.local/bin:$PATH"
 

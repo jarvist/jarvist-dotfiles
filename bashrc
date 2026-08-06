@@ -45,6 +45,10 @@ if [ -n "$ZSH_VERSION" ]; then
     # z-sh autocompletes, so you can tab within scp etc.
     autoload -Uz compinit
     compinit
+
+    # more linux-like Apple 'top'; htop was feeding me duff info (CPU use)
+    alias top="top -o cpu -s 1 -stats pid,command,cpu,th,pstate,mem,time"
+
     case "$HOST" in # apparently HOST is set my ZSH
         IC-MM72V3T2YK) HOSTNAME="Ansible" ;; #Mac Pro laptop; because it is mainly a gateway
         IC-YJPMYH5L23) HOSTNAME="Ensor" ;; # Mac Studio, MSRH

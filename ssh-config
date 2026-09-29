@@ -44,8 +44,13 @@ ControlPath ~/.ssh/control:%h:%p:%r
 #                  |_|
 # - Scientia 
 
-# Imperial hosts - need VPN to be on / inside IC wireless
+# HX2 cluster; workaround as you need to use password by preference
+Host hx2 login.hx2.hpc.ic.ac.uk
+    HostName login.hx2.hpc.ic.ac.uk
+    User jmf02
+    PreferredAuthentications password,keyboard-interactive
 
+# Imperial hosts - need VPN to be on / inside IC wireless
 Host *.ic.ac.uk *.imperial.ac.uk
     User jmf02
     IdentityFile ~/.ssh/id_ed25519 

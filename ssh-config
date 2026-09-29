@@ -44,7 +44,9 @@ ControlPath ~/.ssh/control:%h:%p:%r
 #                  |_|
 # - Scientia 
 
-# HX2 cluster; workaround as you need to use password by preference
+# HX2 - Password-only for now due to pilot status
+# New 'throughput' machine; Intel Xeon 6747P Granite Rapids, currently 1 and
+# 2 node jobs only
 Host hx2 login.hx2.hpc.ic.ac.uk
     HostName login.hx2.hpc.ic.ac.uk
     User jmf02
@@ -112,15 +114,6 @@ Host hx1
     # does not resolve from outside Imperial, so need full ipv6 (temporary)
     HostName 2a0c:5bc0:89:ab0:0:c12:1:17
     User jmf02
-
-# HX2 - Password-only for now due to pilot status
-# New 'throughput' machine; Intel Xeon 6747P Granite Rapids, currently 1 and
-# 2 node jobs only
-Host hx2
-    HostName login.hx2.hpc.ic.ac.uk
-    User jmf02
-    PreferredAuthentications password
-    PubkeyAuthentication no
 
 Host union
     HostName union.ic.ac.uk

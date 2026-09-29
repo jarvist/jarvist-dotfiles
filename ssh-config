@@ -82,13 +82,13 @@ Host ensor ensoripv6
     Hostname 2a0c:5bc0:40:2b50:c58:ab89:bbed:5e1a
     User jmf02
 
+# The original AND BEST circa 2007
 Host hpc cx1
     HostName login.hpc.ic.ac.uk
     User jmf02
 
 
 # CX3-phase2: hopefully this will be sanitised shortly
-
 Host cx3 cx3-p2
     #HostName login-ai.cx3.hpc.ic.ac.uk
     HostName 2a0c:5bc0:89:a11:ba3f:d2ff:fe69:c072
@@ -105,11 +105,22 @@ Host cx3-p2-IceLakeB
 
 
 # HX1 - apparently pronounced 'Hex'
+# GPU cluster, but those XEON nodes are pretty fast too. A couple of high mem
+# nodes.
 Host hx1 
     # login.hx1.hpc.ic.ac.uk 
     # does not resolve from outside Imperial, so need full ipv6 (temporary)
     HostName 2a0c:5bc0:89:ab0:0:c12:1:17
     User jmf02
+
+# HX2 - Password-only for now due to pilot status
+# New 'throughput' machine; Intel Xeon 6747P Granite Rapids, currently 1 and
+# 2 node jobs only
+Host hx2
+    HostName login.hx2.hpc.ic.ac.uk
+    User jmf02
+    PreferredAuthentications password
+    PubkeyAuthentication no
 
 Host union
     HostName union.ic.ac.uk

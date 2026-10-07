@@ -101,6 +101,9 @@ alias weathernoc='curl http://wttr.in/noc '
 alias weathermayo=weathernoc
 alias weather=weatherlondon
 
+# Met Office UKV high-res forecast via Open-Meteo | Next 24h rain (mm) for Ealing (51.513 N, -0.304 W)
+alias rainForAMillionYearsWillIt="curl -s 'https://api.open-meteo.com/v1/forecast?latitude=51.513&longitude=-0.304&hourly=precipitation&models=ukmo_seamless&timezone=Europe%2FLondon' | jq -r --arg now \"\$(date +%Y-%m-%dT%H:00)\" '.hourly | [.time, .precipitation] | transpose[] | select(.[0] >= \$now) | \"\(.[0]) \(.[1])\"' | head -n 24 | awk '{t=substr(\$1,6,11); sub(\"T\",\" \",t); b=\"\"; bars=int(\$2*5); for(i=0;i<bars;i++) b=b\"█\"; printf \"%s  %5.2f mm  %s\n\", t, \$2, b}'"
+
 # Check / Close SSH Master Connections (when X-forwarding suddenly breaks; laptop wakes up with stale WiFi / connections)
 alias ssh-MasterConnection-exit="ssh -O exit "
 alias ssh-MasterConnection-check="ssh -O check "

@@ -216,6 +216,31 @@ fi
 # turn on auto-jump. Use 'j' to jump!
 source /usr/share/autojump/autojump.sh
 
+# Generate LLM context
+squirt() {
+  {
+    printf "# FILES: find . -maxdepth 2 -not -path '*/.*' \n"
+    find . -maxdepth 2 -not -path '*/.*' 
+
+    printf "\n# GIT DIFF HEAD: git diff -U2 HEAD \n"
+    git diff -U2 HEAD 2>/dev/null
+
+    for f in "$@"; do
+      if [ -f "$f" ]; then
+        printf "\n## KEY FILE: %s\n\n" "$f"
+        cat "$f"
+      fi
+    done
+  } > squirt.out
+
+  pbcopy < squirt.out
+  # circa. 2026, 100k chars is fine, 100-200k is OK ish, over 200k distracts
+  # most models
+  printf "Squirted $(wc -c < squirt.out) characters to squirt.out and tried pbcopy. Happy LLM'ing!\n" 
+}
+# squirt-fetch host (remote-directory, home dir default) & suck into pbcopy
+squirt-fetch() { ssh "$1" "cat ${2:-.}/squirt.out" | pbcopy; }
+
 # Message of the day
 
 # See: https://en.wikipedia.org/wiki/WarGames ; Child of the 80s
